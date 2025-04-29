@@ -4,137 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buckazoids</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-    }
-    .hero-section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
+      font-family: 'Orbitron', sans-serif;
       overflow: hidden;
-      background-color: #000;
     }
+
     .background-video {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
     }
-    .hero-content {
+
+    .content {
       position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      z-index: 2;
       text-align: center;
-      padding: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff3e2;
+      text-shadow: 0 0 20px #f77f00;
     }
-    .hero-headline {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 64px;
-      color: #00D9FF;
-      text-shadow: 0 0 8px #00D9FF;
-      margin-top: 20px;
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
     }
-    .logo {
-      width: 300px;
-      max-width: 80vw;
+
+    .subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #fff3e2;
+      text-shadow: 0 0 10px #02314d;
     }
-    .hidden-qr {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 70px;
-      opacity: 0.15;
-      transition: opacity 0.3s;
+
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #f77f00;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .hidden-qr:hover {
-      opacity: 0.7;
+
+    .buttons a:hover {
+      background: #feb73f;
     }
-    @media (max-width: 768px) {
-      .hero-headline {
-        font-size: 36px;
-      }
-      .logo {
-        width: 200px;
-      }
-    }
-    @media (max-width: 480px) {
-      .hero-headline {
-        font-size: 28px;
-      }
-      .logo {
-        width: 160px;
-      }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .subtitle { font-size: 1rem; }
     }
   </style>
 </head>
-
 <body>
 
- <style>
-  body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
-    overflow: hidden;
-  }
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="video/roger.mp4" type="video/mp4" />
+  </video>
 
-  .background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-  }
+  <section class="content">
+    <h1>Buckazoids</h1>
+    <p class="subtitle">
+      Before Bitcoin, There Were Buckazoids.<br />
+      Lost digital currency. Now community-owned.
+    </p>
+    <div class="buttons">
+      <a href="press-kit.html">Media Kit</a>
+      <a href="financials.html">Financials</a>
+      <a href="governance.html">Governance & Community</a>
+    </div>
+  </section>
 
-  .content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding-top: 15vh;
-  }
-
-  h1 {
-    font-size: 4rem;
-    text-shadow: 0 0 20px #f77f00;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    margin: 1rem auto;
-    max-width: 600px;
-    line-height: 1.4;
-    color: #fff3e2;
-    text-shadow: 0 0 10px #02314d;
-  }
-
-  .buttons a {
-    display: inline-block;
-    margin: 1rem;
-    padding: 0.75rem 1.5rem;
-    background: #f77f00;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.3s;
-  }
-
-  .buttons a:hover {
-    background: #feb73f;
-  }
-</style>
+</body>
+</html>
