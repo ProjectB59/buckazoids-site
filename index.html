@@ -83,20 +83,58 @@
 
 <body>
 
-  <section class="hero-section">
+ <style>
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    overflow: hidden;
+  }
 
-    <video class="background-video" autoplay muted loop playsinline>
-      <source src="video/space-scene.mp4" type="video/mp4" />
-    </video>
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-    <div class="hero-content">
-      <img src="img/buckazoids-logo.png" alt="Buckazoids Logo" class="logo" />
-      <h1 class="hero-headline">THE GREATEST DIGITAL DISCOVERY OF ALL TIME.</h1>
-    </div>
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-top: 15vh;
+  }
 
-    <img src="img/qr-code.png" alt="Hidden QR Code" class="hidden-qr" />
+  h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 20px #f77f00;
+  }
 
-  </section>
+  .subtitle {
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    line-height: 1.4;
+    color: #fff3e2;
+    text-shadow: 0 0 10px #02314d;
+  }
 
-</body>
-</html>
+  .buttons a {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #f77f00;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+
+  .buttons a:hover {
+    background: #feb73f;
+  }
+</style>
