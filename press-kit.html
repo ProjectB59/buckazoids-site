@@ -29,28 +29,30 @@
     }
 
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: flex;
+      justify-content: center;
       gap: 40px;
+      flex-wrap: wrap;
     }
 
     .card {
       background-color: #02314d;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(247, 127, 0, 0.2);
-      transition: transform 0.2s ease;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(247, 127, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(247, 127, 0, 0.4);
+      box-shadow: 0 0 25px rgba(247, 127, 0, 0.6);
     }
 
     .card img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 300px;
+      object-fit: cover;
     }
 
     .card h2 {
@@ -64,32 +66,52 @@
       color: #fff3e2;
       line-height: 1.6;
     }
+
+    .home-button {
+      display: block;
+      margin: 0 auto 40px;
+      padding: 12px 24px;
+      background-color: #f77f00;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      width: fit-content;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #feb73f;
+    }
   </style>
 </head>
 
 <body>
-<div class="container">
-  <h1>Press Kit & Media Center</h1>
-  <div class="grid">
+  <div class="container">
+    <a href="/" class="home-button">← Home</a>
+    <h1>Press Kit & Media Center</h1>
+    <div class="grid">
 
-    <div class="card">
-      <img src="img/meme-gallery.jpg" alt="Meme Gallery" class="press-image" />
-      <h2>Meme Gallery</h2>
-      <p>Curated memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+      <div class="card">
+        <img src="img/meme-gallery.jpg" alt="Meme Gallery" class="press-image" />
+        <h2>Meme Gallery</h2>
+        <p>Curated memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/branding-assets.jpg" alt="Branding Assets" class="press-image" />
+        <h2>Branding Assets</h2>
+        <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/whitepaper-access.jpg" alt="Whitepaper Access" class="press-image" />
+        <h2>Whitepaper Access</h2>
+        <p>Explore tokenomics, the Buckazoids history, and our roadmap in one place.</p>
+      </div>
+
     </div>
-
-    <div class="card">
-      <img src="img/branding-assets.jpg" alt="Branding Assets" class="press-image" />
-      <h2>Branding Assets</h2>
-      <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
-    </div>
-
-    <div class="card">
-      <img src="img/whitepaper-access.jpg" alt="Whitepaper Access" class="press-image" />
-      <h2>Whitepaper Access</h2>
-      <p>Explore tokenomics, the Buckazoids history, and our roadmap in one place.</p>
-    </div>
-
   </div>
-</div>
-
+</body>
+</html>
