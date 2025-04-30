@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buckazoids Meme Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: #151b1d;
+      color: #fff3e2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #fff3e2;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .meme-card {
+      background-color: #02314d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(247, 127, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .meme-card:hover {
+      transform: scale(1.03);
+    }
+
+    .meme-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .meme-card p {
+      padding: 10px 15px;
+      color: #fff3e2;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Buckazoids Meme Gallery</h1>
+    <div class="grid">
+      <div class="meme-card">
+        <img src="img/meme1.jpg" alt="Meme 1">
+        <p>“The original 8-bit coin... still flexing.”</p>
+      </div>
+      <div class="meme-card">
+        <img src="img/meme2.jpg" alt="Meme 2">
+        <p>When your fictional currency turns real 🔥</p>
+      </div>
+      <div class="meme-card">
+        <img src="img/meme3.jpg" alt="Meme 3">
+        <p>Buckazoids > Bitcoin. Change my mind.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
