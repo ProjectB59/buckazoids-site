@@ -28,7 +28,7 @@
       display: flex; justify-content: center; gap: 1rem;
     }
     .nav-button {
-      font-weight: 600; padding: 0.4rem 0.8rem;
+      font-weight: 600; padding: .4rem .8rem;
       border-bottom: 2px solid transparent;
       transition: color .2s, border-color .2s;
     }
@@ -48,9 +48,7 @@
     h2 {
       font-size: 1.8rem; margin-bottom: 12px; color: #feb73f;
     }
-    p {
-      margin-bottom: 16px;
-    }
+    p { margin-bottom: 16px; }
 
     /* —— Buttons —— */
     .btn {
@@ -59,20 +57,17 @@
       font-weight: 600; border-radius: 6px;
       transition: background .3s, transform .2s;
     }
-    .btn:hover {
-      background: #feb73f; transform: scale(1.05);
-    }
+    .btn:hover { background: #feb73f; transform: scale(1.05); }
 
     /* —— Embed Styles —— */
     .iframe-container {
-      position: relative;
-      width: 100%; padding-bottom: 56.25%;
+      position: relative; width: 100%; padding-bottom: 56.25%;
       margin-bottom: 16px;
     }
     .iframe-container iframe {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: 1px solid #02314d; border-radius: 8px;
+      position: absolute; top:0; left:0;
+      width:100%; height:100%;
+      border:1px solid #02314d; border-radius:8px;
     }
 
     /* —— Back Button —— */
@@ -98,56 +93,49 @@
   <!-- Header / Nav -->
   <div class="header">
     <nav>
-      <a href="index.html" class="nav-button">Home</a>
-      <a href="buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank">
-        Lore
-      </a>
-      <a href="press-kit.html" class="nav-button">Press Kit</a>
-      <a href="financials.html" class="nav-button active">Financials</a>
+      <a href="index.html"                        class="nav-button">Home</a>
+      <a href="buckazoids-meme-gallery.html"      class="nav-button">Meme Gallery</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" 
+         class="nav-button" target="_blank">Lore</a>
+      <a href="press-kit.html"                    class="nav-button">Press Kit</a>
+      <a href="financials.html"                   class="nav-button active">Financials</a>
     </nav>
   </div>
 
-  <!-- Main Content -->
   <div class="container">
     <h1>Financials & Treasury</h1>
 
     <!-- Treasury Section -->
     <section>
       <h2>Treasury</h2>
-      <p>Our on-chain treasury dashboard showing balances, allocations, and proposal status:</p>
-      <a 
-        href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home" 
-        target="_blank" 
-        class="btn"
-      >
-        View Treasury Dashboard
-      </a>
+      <p>Check our on-chain treasury (balances, allocations, proposals):</p>
+      <a href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home"
+         class="btn" target="_blank">View Treasury Dashboard</a>
     </section>
 
     <!-- Accounting Section -->
     <section>
       <h2>Accounting</h2>
-      <p>Live books — income statements, expense trackers, budget vs. actuals — embedded below:</p>
+      <p>Live books — income, expenses, budget vs actuals — embedded below:</p>
       <div class="iframe-container">
         <iframe
           src="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/pubhtml?widget=true&amp;headers=false"
-          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-        ></iframe>
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+        </iframe>
       </div>
-      <p><em>Tip:</em> To embed an Excel workbook, upload it to OneDrive and paste its Office Online embed code here.</p>
+      <p><em>Tip:</em> To embed Excel, upload to OneDrive and paste its embed code here.</p>
     </section>
 
     <!-- Recommendations Section -->
     <section>
       <h2>Additional Resources</h2>
       <ul>
-        <li>🔍 <strong>Audit & Transparency Logs</strong> — immutable record of all disbursements and proposals</li>
-        <li>📅 <strong>Monthly Financial Reports</strong> — downloadable PDFs for community review</li>
-        <li>📝 <strong>Expense Request Form</strong> — a Google Form for submitting reimbursements</li>
-        <li>📊 <strong>Forecast & Budget Planner</strong> — quarterly projections vs. actuals</li>
-        <li>🛡️ <strong>Multi-sig Governance Details</strong> — signer list and approval thresholds</li>
-        <li>⚖️ <strong>Tax & Compliance Docs</strong> — guidance on local regulations and filings</li>
+        <li>🔍 Audit & Transparency Logs (immutable record of disbursements)</li>
+        <li>📅 Monthly Financial Reports (PDF summaries)</li>
+        <li>📝 Expense Request Form (Google Form)</li>
+        <li>📊 Forecast & Budget Planner (quarterly projections)</li>
+        <li>🛡️ Multi-sig Governance Details</li>
+        <li>⚖️ Tax & Compliance Docs</li>
       </ul>
     </section>
 
@@ -157,4 +145,3 @@
 
 </body>
 </html>
-
