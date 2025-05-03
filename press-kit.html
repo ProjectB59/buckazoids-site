@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press Kit & Media Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: #151b1d;
+      color: #fff3e2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background-color: #02314d;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(247, 127, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(247, 127, 0, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin: 20px;
+      color: #ffffff;
+    }
+
+    .card p {
+      margin: 0 20px 20px;
+      color: #fff3e2;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff3e2;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: inline-block;
+      background-color: transparent;
+    }
+
+    a:hover {
+      box-shadow: 0 0 15px 5px #f77f00;
+      background-color: #feb73f;
+      color: #151b1d;
+      transform: scale(1.05);
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="home-button">↩ Home</a>
+    <h1>Press Kit & Media Center</h1>
+    <div class="grid">
+
+      <a href="buckazoids-meme-gallery.html" style="text-decoration: none; color: inherit;">
+        <div class="card">
+          <img src="img/meme-gallery.jpg" alt="Meme Gallery" class="press-image" />
+          <h2>Meme Gallery</h2>
+          <p>Memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+        </div>
+      </a>
+
+      <div class="card">
+        <img src="img/branding-assets.jpg" alt="Branding Assets" class="press-image" />
+        <h2>Branding Assets</h2>
+        <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
+      </div>
+
+      <div class="card">
+        <img src="img/whitepaper-access.jpg" alt="Buckazoids Lore" class="press-image" />
+        <h2>Buckazoids Lore</h2>
+        <p><a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank" style="color: #fff3e2; text-decoration: underline;">
+          Dive into the full story of Buckazoids, its origin, and digital legacy.
+        </a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html" style="color: #f77f00; text-decoration: underline; font-size: 1rem;">↩ Back to Press Kit</a>
+  </div>
+</body>
+</html>
