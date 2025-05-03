@@ -64,11 +64,15 @@
     }
 
     /* ========== Grid ========== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 40px;
-      justify-content: center;
+   .grid {
+  display: grid;
+  /* create as many 280px-wide columns as fit, then stop */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+  gap: 40px;
+  /* center the whole grid within its container */
+  justify-content: center;
+}
+
     }
 
     /* ========== Card ========== */
