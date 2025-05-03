@@ -3,88 +3,150 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Financials – Buckazoids</title>
+  <title>Financials & Treasury</title>
   <link 
     href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" 
     rel="stylesheet"
   />
   <style>
-    /* —— Reset & Base —— */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* ===== Reset & Base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Sora', sans-serif;
       background: #151b1d;
       color: #fff3e2;
-      line-height: 1.5;
+      line-height: 1.4;
     }
     a { text-decoration: none; color: inherit; }
 
-    /* —— Header & Nav —— */
+    /* ===== Header & Nav ===== */
     .header {
-      background: #0f1315; padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      background: #0f1315;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
     nav {
-      display: flex; justify-content: center; gap: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
     .nav-button {
-      font-weight: 600; padding: .4rem .8rem;
+      font-weight: 600;
+      padding: .4rem .8rem;
       border-bottom: 2px solid transparent;
       transition: color .2s, border-color .2s;
     }
-    .nav-button:hover { color: #feb73f; }
+    .nav-button:hover {
+      color: #feb73f;
+    }
     .nav-button.active {
-      color: #feb73f; border-color: #feb73f;
+      color: #feb73f;
+      border-color: #feb73f;
     }
 
-    /* —— Container & Headings —— */
+    /* ===== Page Wrapper & Title ===== */
     .container {
-      max-width: 1200px; margin: 40px auto; padding: 0 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
     h1 {
-      text-align: center; font-size: 2.75rem;
-      margin-bottom: 40px; font-weight: 700;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
     }
-    h2 {
-      font-size: 1.8rem; margin-bottom: 12px; color: #feb73f;
-    }
-    p { margin-bottom: 16px; }
 
-    /* —— Buttons —— */
-    .btn {
-      display: inline-block; padding: 10px 20px;
-      background: #f77f00; color: #151b1d;
-      font-weight: 600; border-radius: 6px;
+    /* ===== 3-Column Grid ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 40px;
+      align-items: start;
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background: #02314d;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(247,127,0,0.3);
+      transition: transform .3s, box-shadow .3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(247,127,0,0.6);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .card-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-content h2 {
+      font-size: 1.75rem;
+      margin-bottom: .75rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .card-content p {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* ===== Card Button ===== */
+    .card-button {
+      display: inline-block;
+      width: 160px;
+      margin-top: 20px;
+      padding: 10px 0;
+      background: #f77f00;
+      color: #151b1d;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
       transition: background .3s, transform .2s;
     }
-    .btn:hover { background: #feb73f; transform: scale(1.05); }
-
-    /* —— Embed Styles —— */
-    .iframe-container {
-      position: relative; width: 100%; padding-bottom: 56.25%;
-      margin-bottom: 16px;
-    }
-    .iframe-container iframe {
-      position: absolute; top:0; left:0;
-      width:100%; height:100%;
-      border:1px solid #02314d; border-radius:8px;
+    .card-button:hover {
+      background: #feb73f;
+      transform: scale(1.05);
     }
 
-    /* —— Back Button —— */
+    /* ===== Back to Home ===== */
     .back-button {
-      display: block; width: fit-content;
-      margin: 40px auto; padding: 12px 24px;
-      background: #f77f00; color: #151b1d;
-      font-weight: 600; border-radius: 8px;
+      display: block;
+      width: 200px;
+      margin: 0 auto 40px;
+      padding: 10px 0;
+      background: #f77f00;
+      color: #151b1d;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
       transition: background .3s, transform .2s;
     }
     .back-button:hover {
-      background: #feb73f; transform: scale(1.05);
+      background: #feb73f;
+      transform: scale(1.05);
     }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.5rem; }
+    /* ===== Responsive ===== */
+    @media(max-width:900px){
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:600px){
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -93,51 +155,63 @@
   <!-- Header / Nav -->
   <div class="header">
     <nav>
-      <a href="index.html"                        class="nav-button">Home</a>
-      <a href="buckazoids-meme-gallery.html"      class="nav-button">Meme Gallery</a>
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" 
-         class="nav-button" target="_blank">Lore</a>
-      <a href="press-kit.html"                    class="nav-button">Press Kit</a>
-      <a href="financials.html"                   class="nav-button active">Financials</a>
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank">Lore</a>
+      <a href="press-kit.html" class="nav-button">Press Kit</a>
+      <a href="financials.html" class="nav-button active">Financials</a>
     </nav>
   </div>
 
+  <!-- Main Content -->
   <div class="container">
     <h1>Financials & Treasury</h1>
+    <div class="grid">
 
-    <!-- Treasury Section -->
-    <section>
-      <h2>Treasury</h2>
-      <p>Check our on-chain treasury (balances, allocations, proposals):</p>
-      <a href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home"
-         class="btn" target="_blank">View Treasury Dashboard</a>
-    </section>
-
-    <!-- Accounting Section -->
-    <section>
-      <h2>Accounting</h2>
-      <p>Live books — income, expenses, budget vs actuals — embedded below:</p>
-      <div class="iframe-container">
-        <iframe
-          src="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/pubhtml?widget=true&amp;headers=false"
-          sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
-        </iframe>
+      <!-- Treasury Card -->
+      <div class="card">
+        <img src="img/treasury.jpg" alt="Treasury Dashboard">
+        <div class="card-content">
+          <h2>Treasury</h2>
+          <p>View our on-chain treasury balances, allocations, and proposal status.</p>
+          <a
+            href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home"
+            class="card-button"
+            target="_blank"
+            rel="noopener"
+          >View Treasury</a>
+        </div>
       </div>
-      <p><em>Tip:</em> To embed Excel, upload to OneDrive and paste its embed code here.</p>
-    </section>
 
-    <!-- Recommendations Section -->
-    <section>
-      <h2>Additional Resources</h2>
-      <ul>
-        <li>🔍 Audit & Transparency Logs (immutable record of disbursements)</li>
-        <li>📅 Monthly Financial Reports (PDF summaries)</li>
-        <li>📝 Expense Request Form (Google Form)</li>
-        <li>📊 Forecast & Budget Planner (quarterly projections)</li>
-        <li>🛡️ Multi-sig Governance Details</li>
-        <li>⚖️ Tax & Compliance Docs</li>
-      </ul>
-    </section>
+      <!-- Accounting Card -->
+      <div class="card">
+        <img src="img/accounting.jpg" alt="Accounting Sheets">
+        <div class="card-content">
+          <h2>Accounting</h2>
+          <p>Access our live financial books (income, expenses, budgets) in Google Sheets.</p>
+          <a
+            href="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE"
+            class="card-button"
+            target="_blank"
+            rel="noopener"
+          >Open Sheets</a>
+        </div>
+      </div>
+
+      <!-- Audit & Transparency Card -->
+      <div class="card">
+        <img src="img/audit.jpg" alt="Audit & Transparency">
+        <div class="card-content">
+          <h2>Audit &amp; Transparency</h2>
+          <p>Review our audited financial records and transparent transaction logs.</p>
+          <a
+            href="audit-transparency.html"
+            class="card-button"
+          >View Audit Logs</a>
+        </div>
+      </div>
+
+    </div>
 
     <!-- Back to Home -->
     <a href="index.html" class="back-button">← Back to Home</a>
