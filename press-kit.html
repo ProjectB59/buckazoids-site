@@ -9,14 +9,14 @@
     rel="stylesheet"
   />
   <style>
-    /* ========== Global Reset ========== */
+    /* ========= Global Reset ========= */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: "Sora", sans-serif;
+      font-family: 'Sora', sans-serif;
       background-color: #151b1d;
       color: #fff3e2;
     }
@@ -25,7 +25,7 @@
       color: inherit;
     }
 
-    /* ========== Header / Nav ========== */
+    /* ========= Header & Nav ========= */
     .header {
       background-color: #0f1315;
       padding: 20px;
@@ -33,8 +33,8 @@
     }
     nav {
       display: flex;
-      gap: 1rem;
       justify-content: center;
+      gap: 1rem;
     }
     .nav-button {
       font-weight: 600;
@@ -46,11 +46,11 @@
       color: #feb73f;
     }
     .nav-button.active {
-      border-color: #feb73f;
       color: #feb73f;
+      border-color: #feb73f;
     }
 
-    /* ========== Page Wrapper ========== */
+    /* ========= Page Wrapper ========= */
     .container {
       max-width: 1400px;
       margin: 40px auto;
@@ -63,19 +63,16 @@
       font-weight: 700;
     }
 
-    /* ========== Grid ========== */
-   .grid {
-  display: grid;
-  /* create as many 280px-wide columns as fit, then stop */
-  grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
-  gap: 40px;
-  /* center the whole grid within its container */
-  justify-content: center;
-}
-
+    /* ========= Centered Grid ========= */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    /* ========== Card ========== */
+    /* ========= Card Styling ========= */
     .card {
       background-color: #02314d;
       border-radius: 12px;
@@ -91,8 +88,8 @@
     }
     .card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: auto;    /* show full image */
+      display: block;
     }
     .card-content {
       padding: 20px;
@@ -105,54 +102,92 @@
     .card-content p {
       line-height: 1.6;
     }
+
+    /* ========= Back Button ========= */
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 50px auto;
+      padding: 12px 24px;
+      background-color: #f77f00;
+      color: #151b1d;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .back-button:hover {
+      background-color: #feb73f;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
-  <!-- Header/nav -->
+
+  <!-- Header / Nav -->
   <div class="header">
     <nav>
-      <a href="index.html"                        class="nav-button">Home</a>
-      <a href="buckazoids-meme-gallery.html"      class="nav-button">Meme Gallery</a>
-      <a href="buckazoids-lore.html"              class="nav-button">Lore</a>
-      <a href="press-kit.html"                    class="nav-button active">Press Kit</a>
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
+      <a href="buckazoids-lore.html" class="nav-button">Lore</a>
+      <a href="press-kit.html" class="nav-button active">Press Kit</a>
     </nav>
   </div>
 
-  <!-- Main content -->
+  <!-- Main Content -->
   <div class="container">
     <h1>Press Kit & Media Center</h1>
     <div class="grid">
-      <!-- Meme Gallery card -->
+      <!-- Meme Gallery Card -->
       <a href="buckazoids-meme-gallery.html">
         <div class="card">
-          <img src="img/meme-gallery.jpg" alt="Meme Gallery"/>
+          <img src="img/meme-gallery.jpg" alt="Meme Gallery" />
           <div class="card-content">
             <h2>Meme Gallery</h2>
-            <p>Memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+            <p>
+              Curated memes inspired by the Buckazoids retro-futurist spirit.
+              Bright, bold, and shareable.
+            </p>
           </div>
         </div>
       </a>
-      <!-- Branding Assets card -->
+
+      <!-- Branding Assets Card -->
       <a href="branding-assets.zip">
         <div class="card">
-          <img src="img/branding-assets.jpg" alt="Branding Assets"/>
+          <img src="img/branding-assets.jpg" alt="Branding Assets" />
           <div class="card-content">
             <h2>Branding Assets</h2>
-            <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
+            <p>
+              Download logos, fonts, and templates for media, journalists,
+              and the community.
+            </p>
           </div>
         </div>
       </a>
-      <!-- Lore card -->
-      <a href="buckazoids-lore.html">
+
+      <!-- Whitepaper / Lore Card -->
+      <a
+        href="https://buckazoids-bitcoin-echo.lovable.app/about"
+        target="_blank"
+        rel="noopener"
+      >
         <div class="card">
-          <img src="img/whitepaper-access.jpg" alt="Buckazoids Lore"/>
+          <img src="img/whitepaper-access.jpg" alt="Whitepaper Access" />
           <div class="card-content">
-            <h2>Buckazoids Lore</h2>
-            <p>Dive into the full story of Buckazoids, its origin, and digital legacy.</p>
+            <h2>Whitepaper Access</h2>
+            <p>
+              Explore tokenomics, the Buckazoids history, and our roadmap in
+              one place.
+            </p>
           </div>
         </div>
       </a>
     </div>
+
+    <!-- Big Centered Back Button -->
+    <a href="index.html" class="back-button">← Back to Home</a>
   </div>
+
 </body>
 </html>
