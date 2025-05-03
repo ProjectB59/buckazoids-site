@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buckazoids Meme Gallery</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
@@ -10,90 +10,78 @@
   />
   <style>
     /* GLOBAL RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box }
     body {
-      font-family: "Sora", sans-serif;
-      background-color: #151b1d;
-      color: #fff3e2;
+      font-family:"Sora",sans-serif;
+      background:#151b1d; color:#fff3e2;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration:none; color:inherit }
 
     /* HEADER & NAV */
     .header {
-      background-color: #0f1315;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      background:#0f1315; padding:20px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.7);
     }
     nav {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
+      display:flex; gap:1rem; justify-content:center;
     }
     .nav-button {
-      font-weight: 600;
-      padding: 0.4rem 0.8rem;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
+      font-weight:600; padding:.4rem .8rem;
+      border-bottom:2px solid transparent;
+      transition:color .2s, border-color .2s;
     }
-    .nav-button:hover {
-      color: #feb73f;
-    }
+    .nav-button:hover { color:#feb73f }
     .nav-button.active {
-      border-color: #feb73f;
-      color: #feb73f;
+      color:#feb73f; border-color:#feb73f;
     }
 
     /* PAGE WRAPPER */
     .container {
-      max-width: 1400px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width:1400px; margin:40px auto; padding:0 20px;
     }
     h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 40px;
+      font-size:2.5rem; text-align:center; margin-bottom:40px;
     }
 
     /* GALLERY GRID */
     .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 30px;
-      justify-content: center;
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+      gap:30px;
+      justify-content:center;
     }
 
     /* CARD STYLING */
     .meme-card {
-      display: flex;
-      flex-direction: column;
-      background-color: #02314d;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(247, 127, 0, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display:flex; flex-direction:column;
+      background:#02314d; border-radius:12px; overflow:hidden;
+      box-shadow:0 0 20px rgba(247,127,0,0.3);
+      transition:transform .3s, box-shadow .3s;
     }
     .meme-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(247, 127, 0, 0.6);
+      transform:scale(1.03);
+      box-shadow:0 0 30px rgba(247,127,0,0.6);
     }
     .meme-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+      width:100%; height:200px; object-fit:cover;
+      display:block;
     }
     .meme-title {
-      padding: 0.75rem;
-      font-size: 1.1rem;
-      text-align: center;
-      font-weight: 600;
+      padding:.75rem; font-size:1.1rem;
+      text-align:center; font-weight:600;
+    }
+
+    /* VIEW & DOWNLOAD BUTTONS */
+    .action-btn {
+      display:inline-block; width:80px;
+      margin:8px 6px; padding:6px 0;
+      background:#f77f00; color:#151b1d;
+      font-size:.9rem; font-weight:600;
+      border-radius:6px; text-align:center;
+      transition:background .3s, transform .2s;
+    }
+    .action-btn:hover {
+      background:#feb73f; transform:scale(1.05);
     }
   </style>
 </head>
@@ -108,6 +96,7 @@
   <div class="container">
     <h1>Buckazoids Meme Gallery</h1>
     <div class="gallery-container">
+      <!-- ALL MEME CARDS: copy/pasted from your list -->
       <div class="meme-card"><img src="img/memes/COD.jpg" alt="Cod"><div class="meme-title">Cod</div></div>
       <div class="meme-card"><img src="img/memes/alice.jpg" alt="Alice"><div class="meme-title">Alice</div></div>
       <div class="meme-card"><img src="img/memes/alien.jpg" alt="Alien"><div class="meme-title">Alien</div></div>
@@ -199,5 +188,27 @@
       <div class="meme-card"><img src="img/memes/zeus.jpg" alt="Zeus"><div class="meme-title">Zeus</div></div>
     </div>
   </div>
+
+  <script>
+    // Append "View" and "Download" buttons under each meme
+    document.querySelectorAll('.meme-card').forEach(card => {
+      const img = card.querySelector('img');
+      // View
+      const view = document.createElement('a');
+      view.href = img.src;
+      view.target = '_blank';
+      view.rel = 'noopener';
+      view.className = 'action-btn';
+      view.textContent = 'View';
+      card.appendChild(view);
+      // Download
+      const dl = document.createElement('a');
+      dl.href = img.src;
+      dl.download = '';
+      dl.className = 'action-btn';
+      dl.textContent = 'Download';
+      card.appendChild(dl);
+    });
+  </script>
 </body>
 </html>
