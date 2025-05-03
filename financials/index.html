@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financials – Buckazoids</title>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Orbitron:wght@700&display=swap" 
+    rel="stylesheet"
+  />
+  <style>
+    /* —— Global Reset —— */
+    * { margin:0; padding:0; box-sizing:border-box }
+    body {
+      font-family:'Sora',sans-serif;
+      background:#151b1d;
+      color:#fff3e2;
+      line-height:1.5;
+    }
+    a { text-decoration:none; color:inherit }
+
+    /* —— Header/Nav —— */
+    .header {
+      background:#0f1315;
+      padding:20px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.7);
+    }
+    nav {
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+    }
+    .nav-button {
+      font-weight:600;
+      padding:.4rem .8rem;
+      border-bottom:2px solid transparent;
+      transition:color .2s, border-color .2s;
+    }
+    .nav-button:hover { color:#feb73f }
+    .nav-button.active { color:#feb73f; border-color:#feb73f }
+
+    /* —— Page Container —— */
+    .container {
+      max-width:1200px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+    h1 {
+      text-align:center;
+      font-family:'Orbitron',sans-serif;
+      font-size:2.75rem;
+      margin-bottom:40px;
+    }
+
+    /* —— Sections —— */
+    .section { margin-bottom:60px; }
+    .section h2 {
+      color:#feb73f;
+      font-size:1.8rem;
+      margin-bottom:12px;
+    }
+    .btn {
+      display:inline-block;
+      padding:10px 20px;
+      background:#f77f00;
+      color:#151b1d;
+      font-weight:600;
+      border-radius:6px;
+      transition:background .3s, transform .2s;
+    }
+    .btn:hover { background:#feb73f; transform:scale(1.05) }
+
+    /* —— Embed Container —— */
+    .iframe-container {
+      position:relative;
+      padding-bottom:56.25%; /* 16:9 */
+      height:0;
+      margin-bottom:16px;
+    }
+    .iframe-container iframe {
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      border:1px solid #02314d;
+      border-radius:8px;
+    }
+
+    /* —— Back Button —— */
+    .back-button {
+      display:block;
+      width:fit-content;
+      margin:40px auto;
+      padding:12px 24px;
+      background:#f77f00;
+      color:#151b1d;
+      font-weight:600;
+      border-radius:8px;
+      transition:background .3s, transform .2s;
+    }
+    .back-button:hover { background:#feb73f; transform:scale(1.05) }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Nav -->
+  <div class="header">
+    <nav>
+      <a href="../index.html" class="nav-button">Home</a>
+      <a href="../buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank">Lore</a>
+      <a href="../press-kit.html" class="nav-button">Press Kit</a>
+      <a href="./" class="nav-button active">Financials</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <h1>Financials & Treasury</h1>
+
+    <!-- Treasury -->
+    <section class="section">
+      <h2>Treasury</h2>
+      <p>View our on-chain treasury dashboard (balances, allocations, proposals):</p>
+      <a href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home" class="btn" target="_blank">
+        View Treasury Dashboard
+      </a>
+    </section>
+
+    <!-- Accounting -->
+    <section class="section">
+      <h2>Accounting</h2>
+      <p>Live books — income, expenses, budgets — embedded below:</p>
+      <div class="iframe-container">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/pubhtml?widget=true&amp;headers=false"
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        ></iframe>
+      </div>
+      <p><em>Tip:</em> To embed an Excel workbook, upload to OneDrive and paste its Office Online embed code here.</p>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="section">
+      <h2>What Else to Add</h2>
+      <ul>
+        <li>🔍 Audit & Transparency Logs (immutable record of every disbursement)</li>
+        <li>📅 Monthly PDF Financial Summaries</li>
+        <li>📝 Expense Request Form (Google Form for reimbursements)</li>
+        <li>📊 Forecast & Budget Planner (quarterly projections)</li>
+        <li>🛡️ Multi-sig Governance Details</li>
+        <li>⚖️ Tax & Compliance Docs</li>
+      </ul>
+    </section>
+
+    <a href="../index.html" class="back-button">← Back to Home</a>
+  </div>
+
+</body>
+</html>
 
