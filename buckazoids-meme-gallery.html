@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buckazoids Meme Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Sora', sans-serif;
+      background-color: #151b1d;
+      color: #fff3e2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .meme-card {
+      background-color: #02314d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(247, 127, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .meme-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(247, 127, 0, 0.6);
+    }
+
+    .meme-card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .meme-title {
+      padding: 15px;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #fff3e2;
+    }
+
+    .back-button {
+      display: block;
+      margin: 40px auto 0;
+      text-align: center;
+      font-size: 1rem;
+      color: #f77f00;
+      text-decoration: underline;
+    }
+
+    .back-button:hover {
+      text-shadow: 0 0 10px #f77f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Buckazoids Meme Gallery</h1>
+    <div class="gallery-container">
+      <div class="meme-card"><img src="img/memes/alien.jpg" alt="Alien"><div class="meme-title">Alien</div></div>
+      <div class="meme-card"><img src="img/memes/alwayswere.jpg" alt="Always Were"><div class="meme-title">Always Were</div></div>
+      <div class="meme-card"><img src="img/memes/astro.jpg" alt="Astro"><div class="meme-title">Astro</div></div>
+      <div class="meme-card"><img src="img/memes/backtothefuture.jpg" alt="Back to the Future"><div class="meme-title">Back to the Future</div></div>
+      <div class="meme-card"><img src="img/memes/bewarecounterfitters.jpg" alt="Counterfeit"><div class="meme-title">Counterfeit</div></div>
+      <div class="meme-card"><img src="img/memes/breakingbad.jpg" alt="Breaking Bad"><div class="meme-title">Breaking Bad</div></div>
+      <div class="meme-card"><img src="img/memes/buckalisa.jpg" alt="Buckalisa"><div class="meme-title">Buckalisa</div></div>
+      <div class="meme-card"><img src="img/memes/fortnite.jpg" alt="Fortnite"><div class="meme-title">Fortnite</div></div>
+      <div class="meme-card"><img src="img/memes/gametheory.jpg" alt="Game Theory"><div class="meme-title">Game Theory</div></div>
+      <div class="meme-card"><img src="img/memes/gandalf.jpg" alt="Gandalf"><div class="meme-title">Gandalf</div></div>
+      <div class="meme-card"><img src="img/memes/ronaldo.jpg" alt="Ronaldo"><div class="meme-title">Ronaldo"><div></div>
+      <div class="meme-card"><img src="img/memes/zeus.jpg" alt="Zeus"><div class="meme-title">Zeus</div></div>
+    </div>
+    <a href="press-kit.html" class="back-button">← Back to Press Kit</a>
+  </div>
+</body>
+</html>
