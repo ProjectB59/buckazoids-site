@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buckazoids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #151b1d;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff3e2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #fff3e2;
+      text-shadow: 0 0 20px #f77f00, 0 0 40px #f77f00;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #fff3e2;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      background-color: #f77f00;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #151b1d;
+      box-shadow: 0 0 10px #f77f00, 0 0 20px #feb73f;
+      transition: transform 0.2s ease;
+    }
+
+    .buttons a:hover {
+      transform: scale(1.05);
+      background-color: #feb73f;
+      box-shadow: 0 0 15px #feb73f, 0 0 30px #f77f00;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Buckazoids</h1>
+  <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
+
+  <div class="buttons">
+    <a href="press-kit.html">Media Kit</a>
+    <a href="#">Financials</a>
+    <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
+  </div>
+</body>
+</html>
 
