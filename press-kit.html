@@ -9,119 +9,116 @@
     rel="stylesheet"
   />
   <style>
-    /* ===== Reset & Base ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box }
+    /* — Reset & Base — */
+    * { margin:0; padding:0; box-sizing:border-box }
     body {
-      font-family: 'Sora', sans-serif;
-      background: #151b1d;
-      color: #fff3e2;
-      line-height: 1.4;
+      font-family:'Sora',sans-serif;
+      background:#151b1d; color:#fff3e2;
+      line-height:1.4;
     }
-    a { text-decoration: none; color: inherit }
+    a { text-decoration:none; color:inherit }
 
-    /* ===== Header & Nav ===== */
+    /* — Header & Nav — */
     .header {
-      background: #0f1315; padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      background:#0f1315; padding:20px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.7);
     }
     nav {
-      display: flex; justify-content: center; gap: 1rem;
+      display:flex; justify-content:center; gap:1rem;
     }
     .nav-button {
-      font-weight: 600; padding: .4rem .8rem;
-      border-bottom: 2px solid transparent;
-      transition: color .2s, border-color .2s;
+      font-weight:600; padding:.4rem .8rem;
+      border-bottom:2px solid transparent;
+      transition:color .2s, border-color .2s;
     }
-    .nav-button:hover { color: #feb73f }
+    .nav-button:hover { color:#feb73f }
     .nav-button.active {
-      color: #feb73f; border-color: #feb73f;
+      color:#feb73f; border-color:#feb73f;
     }
 
-    /* ===== Page Wrapper ===== */
+    /* — Page Wrapper & Title — */
     .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width:1200px; margin:40px auto; padding:0 20px;
     }
     h1 {
-      font-size: 2.5rem; text-align: center;
-      margin-bottom: 40px; font-weight: 700;
+      font-size:2.5rem; text-align:center;
+      margin-bottom:40px; font-weight:700;
     }
 
-    /* ===== 3-Column Grid ===== */
+    /* — 3-Column Grid — */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      align-items: start;
-      margin-bottom: 40px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px; margin-bottom:40px;
     }
 
-    /* ===== Card ===== */
+    /* — Card — */
     .card {
-      background: #02314d;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(247,127,0,0.3);
-      transition: transform .3s, box-shadow .3s;
-      display: flex;
-      flex-direction: column;
+      background:#02314d; border-radius:12px;
+      overflow:hidden; box-shadow:0 0 20px rgba(247,127,0,0.3);
+      transition:transform .3s, box-shadow .3s;
+      display:flex; flex-direction:column;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(247,127,0,0.6);
+      transform:translateY(-5px);
+      box-shadow:0 0 30px rgba(247,127,0,0.6);
     }
-
-    /* fixed, cropped image height */
     .card img {
-      width: 100%;
-      height: 200px;        /* force every image to 200px tall */
-      object-fit: cover;    /* crop bottom/top to fill */
-      object-position: top; /* keep the top visible, chop the bottom */
-      display: block;
+      width:100%; height:200px;
+      object-fit:cover; object-position:top;
+      display:block;
     }
-
     .card-content {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      padding:20px; flex:1;
+      display:flex; flex-direction:column;
+      align-items:center;
     }
     .card-content h2 {
-      font-size: 1.75rem;
-      margin-bottom: .75rem;
-      font-weight: 600;
-      text-align: center;
+      font-size:1.75rem; margin-bottom:.75rem;
+      font-weight:600; text-align:center;
     }
     .card-content p {
-      flex: 1;
+      flex:1; text-align:center;
     }
 
-    /* ===== Back Button ===== */
+    /* — Card Buttons — */
+    .card-button {
+      display:inline-block;
+      width:160px;               /* fixed width */
+      margin-top:20px;
+      padding:10px 0;
+      background:#f77f00;
+      color:#151b1d;
+      font-weight:600;
+      border-radius:6px;
+      text-align:center;
+      transition:background .3s, transform .2s;
+    }
+    .card-button:hover {
+      background:#feb73f;
+      transform:scale(1.05);
+    }
+
+    /* — Back to Home — */
     .back-button {
-      display: block;
-      margin: 0 auto 40px;
-      width: 200px;         /* fixed width for uniform buttons */
-      text-align: center;
-      padding: 10px 0;
-      background: #f77f00;
-      color: #151b1d;
-      font-weight: 600;
-      border-radius: 6px;
-      transition: background .3s, transform .2s;
+      display:block; width:200px;
+      margin:0 auto 40px;
+      padding:10px 0;
+      background:#f77f00;
+      color:#151b1d;
+      font-weight:600;
+      border-radius:6px;
+      text-align:center;
+      transition:background .3s, transform .2s;
     }
     .back-button:hover {
-      background: #feb73f;
-      transform: scale(1.05);
+      background:#feb73f;
+      transform:scale(1.05);
     }
 
-    /* ===== Responsive ===== */
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
-    }
+    /* — Responsive — */
+    @media(max-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:600px){ .grid{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -136,43 +133,41 @@
     </nav>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="container">
     <h1>Press Kit & Media Center</h1>
-
     <div class="grid">
+      
       <!-- Card 1 -->
-      <a href="buckazoids-meme-gallery.html">
-        <div class="card">
-          <img src="img/meme-gallery.jpg" alt="Meme Gallery">
-          <div class="card-content">
-            <h2>Meme Gallery</h2>
-            <p>Curated memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
-          </div>
+      <div class="card">
+        <img src="img/meme-gallery.jpg" alt="Meme Gallery">
+        <div class="card-content">
+          <h2>Meme Gallery</h2>
+          <p>Curated memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+          <a href="buckazoids-meme-gallery.html" class="card-button">View Gallery</a>
         </div>
-      </a>
+      </div>
 
       <!-- Card 2 -->
-      <a href="branding-assets.zip">
-        <div class="card">
-          <img src="img/branding-assets.jpg" alt="Branding Assets">
-          <div class="card-content">
-            <h2>Branding Assets</h2>
-            <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
-          </div>
+      <div class="card">
+        <img src="img/branding-assets.jpg" alt="Branding Assets">
+        <div class="card-content">
+          <h2>Branding Assets</h2>
+          <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
+          <a href="branding-assets.zip" class="card-button">Download Assets</a>
         </div>
-      </a>
+      </div>
 
       <!-- Card 3 -->
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">
-        <div class="card">
-          <img src="img/whitepaper-access.jpg" alt="Whitepaper Access">
-          <div class="card-content">
-            <h2>Whitepaper Access</h2>
-            <p>Explore tokenomics, the Buckazoids history, and our roadmap in one place.</p>
-          </div>
+      <div class="card">
+        <img src="img/whitepaper-access.jpg" alt="Whitepaper Access">
+        <div class="card-content">
+          <h2>Whitepaper Access</h2>
+          <p>Explore tokenomics, the Buckazoids history, and our roadmap in one place.</p>
+          <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="card-button" target="_blank">Read Whitepaper</a>
         </div>
-      </a>
+      </div>
+
     </div>
 
     <!-- Back to Home -->
@@ -181,5 +176,3 @@
 
 </body>
 </html>
-
-
