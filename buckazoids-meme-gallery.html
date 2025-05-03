@@ -4,92 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buckazoids Meme Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    body {
+    /* GLOBAL RESET */
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Sora', sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Sora", sans-serif;
       background-color: #151b1d;
       color: #fff3e2;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
+    /* HEADER & NAV */
+    .header {
+      background-color: #0f1315;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .nav-button {
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-button:hover {
+      color: #feb73f;
+    }
+    .nav-button.active {
+      border-color: #feb73f;
+      color: #feb73f;
+    }
+
+    /* PAGE WRAPPER */
+    .container {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
     h1 {
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 40px;
     }
 
+    /* GALLERY GRID */
     .gallery-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 30px;
+      justify-content: center;
     }
 
+    /* CARD STYLING */
     .meme-card {
+      display: flex;
+      flex-direction: column;
       background-color: #02314d;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(247, 127, 0, 0.2);
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(247, 127, 0, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .meme-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(247, 127, 0, 0.6);
+      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(247, 127, 0, 0.6);
     }
-
     .meme-card img {
       width: 100%;
-      height: auto;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
+      height: 200px;
+      object-fit: cover;
     }
-
     .meme-title {
-      padding: 15px;
+      padding: 0.75rem;
       font-size: 1.1rem;
       text-align: center;
-      color: #fff3e2;
-    }
-
-    .back-button {
-      display: block;
-      margin: 40px auto 0;
-      text-align: center;
-      font-size: 1rem;
-      color: #f77f00;
-      text-decoration: underline;
-    }
-
-    .back-button:hover {
-      text-shadow: 0 0 10px #f77f00;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
+  <div class="header">
+    <nav>
+      <a href="press-kit.html" class="nav-button">Home</a>
+      <a href="buckazoids-meme-gallery.html" class="nav-button active">Meme Gallery</a>
+    </nav>
+  </div>
+
   <div class="container">
     <h1>Buckazoids Meme Gallery</h1>
     <div class="gallery-container">
+      <div class="meme-card"><img src="img/memes/COD.jpg" alt="Cod"><div class="meme-title">Cod</div></div>
+      <div class="meme-card"><img src="img/memes/alice.jpg" alt="Alice"><div class="meme-title">Alice</div></div>
       <div class="meme-card"><img src="img/memes/alien.jpg" alt="Alien"><div class="meme-title">Alien</div></div>
-      <div class="meme-card"><img src="img/memes/alwayswere.jpg" alt="Always Were"><div class="meme-title">Always Were</div></div>
+      <div class="meme-card"><img src="img/memes/alwayswere.jpg" alt="Alwayswere"><div class="meme-title">Alwayswere</div></div>
       <div class="meme-card"><img src="img/memes/astro.jpg" alt="Astro"><div class="meme-title">Astro</div></div>
-      <div class="meme-card"><img src="img/memes/backtothefuture.jpg" alt="Back to the Future"><div class="meme-title">Back to the Future</div></div>
-      <div class="meme-card"><img src="img/memes/bewarecounterfitters.jpg" alt="Counterfeit"><div class="meme-title">Counterfeit</div></div>
-      <div class="meme-card"><img src="img/memes/breakingbad.jpg" alt="Breaking Bad"><div class="meme-title">Breaking Bad</div></div>
+      <div class="meme-card"><img src="img/memes/backtothefuture.jpg" alt="Backtothefuture"><div class="meme-title">Backtothefuture</div></div>
+      <div class="meme-card"><img src="img/memes/bewarecounterfitters.jpg" alt="Bewarecounterfitters"><div class="meme-title">Bewarecounterfitters</div></div>
+      <div class="meme-card"><img src="img/memes/breakingbad.jpg" alt="Breakingbad"><div class="meme-title">Breakingbad</div></div>
       <div class="meme-card"><img src="img/memes/buckalisa.jpg" alt="Buckalisa"><div class="meme-title">Buckalisa</div></div>
+      <div class="meme-card"><img src="img/memes/buckazoid.png" alt="Buckazoid"><div class="meme-title">Buckazoid</div></div>
+      <div class="meme-card"><img src="img/memes/cabal.jpg" alt="Cabal"><div class="meme-title">Cabal</div></div>
+      <div class="meme-card"><img src="img/memes/cabal2.jpg" alt="Cabal2"><div class="meme-title">Cabal2</div></div>
+      <div class="meme-card"><img src="img/memes/cityofthefuture.jpg" alt="Cityofthefuture"><div class="meme-title">Cityofthefuture</div></div>
+      <div class="meme-card"><img src="img/memes/cmc.jpg" alt="Cmc"><div class="meme-title">Cmc</div></div>
+      <div class="meme-card"><img src="img/memes/conspiracy.jpg" alt="Conspiracy"><div class="meme-title">Conspiracy</div></div>
+      <div class="meme-card"><img src="img/memes/cybertruck.jpg" alt="Cybertruck"><div class="meme-title">Cybertruck</div></div>
+      <div class="meme-card"><img src="img/memes/doge.jpg" alt="Doge"><div class="meme-title">Doge</div></div>
+      <div class="meme-card"><img src="img/memes/drevil.jpg" alt="Drevil"><div class="meme-title">Drevil</div></div>
+      <div class="meme-card"><img src="img/memes/elov.jpg" alt="Elov"><div class="meme-title">Elov</div></div>
+      <div class="meme-card"><img src="img/memes/escapefromny.jpg" alt="Escapefromny"><div class="meme-title">Escapefromny</div></div>
+      <div class="meme-card"><img src="img/memes/fallout.jpg" alt="Fallout"><div class="meme-title">Fallout</div></div>
+      <div class="meme-card"><img src="img/memes/falloutvegas.jpg" alt="Falloutvegas"><div class="meme-title">Falloutvegas</div></div>
+      <div class="meme-card"><img src="img/memes/fart.jpg" alt="Fart"><div class="meme-title">Fart</div></div>
+      <div class="meme-card"><img src="img/memes/fearandloathing.jpg" alt="Fearandloathing"><div class="meme-title">Fearandloathing</div></div>
+      <div class="meme-card"><img src="img/memes/formom.jpg" alt="Formom"><div class="meme-title">Formom</div></div>
       <div class="meme-card"><img src="img/memes/fortnite.jpg" alt="Fortnite"><div class="meme-title">Fortnite</div></div>
-      <div class="meme-card"><img src="img/memes/gametheory.jpg" alt="Game Theory"><div class="meme-title">Game Theory</div></div>
+      <div class="meme-card"><img src="img/memes/fortnitecrew.jpg" alt="Fortnitecrew"><div class="meme-title">Fortnitecrew</div></div>
+      <div class="meme-card"><img src="img/memes/fortnitepapa.jpg" alt="Fortnitepapa"><div class="meme-title">Fortnitepapa</div></div>
+      <div class="meme-card"><img src="img/memes/fortniteroger.jpg" alt="Fortniteroger"><div class="meme-title">Fortniteroger</div></div>
+      <div class="meme-card"><img src="img/memes/fortune.jpg" alt="Fortune"><div class="meme-title">Fortune</div></div>
+      <div class="meme-card"><img src="img/memes/foxy.jpg" alt="Foxy"><div class="meme-title">Foxy</div></div>
+      <div class="meme-card"><img src="img/memes/gametheory.jpg" alt="Gametheory"><div class="meme-title">Gametheory</div></div>
       <div class="meme-card"><img src="img/memes/gandalf.jpg" alt="Gandalf"><div class="meme-title">Gandalf</div></div>
-      <div class="meme-card"><img src="img/memes/ronaldo.jpg" alt="Ronaldo"><div class="meme-title">Ronaldo"><div></div>
+      <div class="meme-card"><img src="img/memes/gandalf2.jpg" alt="Gandalf2"><div class="meme-title">Gandalf2</div></div>
+      <div class="meme-card"><img src="img/memes/gandalf3.jpg" alt="Gandalf3"><div class="meme-title">Gandalf3</div></div>
+      <div class="meme-card"><img src="img/memes/gmgangday.jpg" alt="Gmgangday"><div class="meme-title">Gmgangday</div></div>
+      <div class="meme-card"><img src="img/memes/gmgangnight.jpg" alt="Gmgangnight"><div class="meme-title">Gmgangnight</div></div>
+      <div class="meme-card"><img src="img/memes/godfather.jpg" alt="Godfather"><div class="meme-title">Godfather</div></div>
+      <div class="meme-card"><img src="img/memes/goonies.jpg" alt="Goonies"><div class="meme-title">Goonies</div></div>
+      <div class="meme-card"><img src="img/memes/gooniesposter.jpg" alt="Gooniesposter"><div class="meme-title">Gooniesposter</div></div>
+      <div class="meme-card"><img src="img/memes/inawepepe.jpg" alt="Inawepepe"><div class="meme-title">Inawepepe</div></div>
+      <div class="meme-card"><img src="img/memes/lakers.jpg" alt="Lakers"><div class="meme-title">Lakers</div></div>
+      <div class="meme-card"><img src="img/memes/lambo.jpg" alt="Lambo"><div class="meme-title">Lambo</div></div>
+      <div class="meme-card"><img src="img/memes/makeacall.jpg" alt="Makeacall"><div class="meme-title">Makeacall</div></div>
+      <div class="meme-card"><img src="img/memes/manoftheyear.jpg" alt="Manoftheyear"><div class="meme-title">Manoftheyear</div></div>
+      <div class="meme-card"><img src="img/memes/marilyn.jpg" alt="Marilyn"><div class="meme-title">Marilyn</div></div>
+      <div class="meme-card"><img src="img/memes/mcmahon.jpg" alt="Mcmahon"><div class="meme-title">Mcmahon</div></div>
+      <div class="meme-card"><img src="img/memes/memeofbitcoin.jpg" alt="Memeofbitcoin"><div class="meme-title">Memeofbitcoin</div></div>
+      <div class="meme-card"><img src="img/memes/minecraft.png" alt="Minecraft"><div class="meme-title">Minecraft</div></div>
+      <div class="meme-card"><img src="img/memes/miow.jpg" alt="Miow"><div class="meme-title">Miow</div></div>
+      <div class="meme-card"><img src="img/memes/mona.jpg" alt="Mona"><div class="meme-title">Mona</div></div>
+      <div class="meme-card"><img src="img/memes/multipass.jpg" alt="Multipass"><div class="meme-title">Multipass</div></div>
+      <div class="meme-card"><img src="img/memes/onair.jpg" alt="Onair"><div class="meme-title">Onair</div></div>
+      <div class="meme-card"><img src="img/memes/origins.jpg" alt="Origins"><div class="meme-title">Origins</div></div>
+      <div class="meme-card"><img src="img/memes/papabuck.jpg" alt="Papabuck"><div class="meme-title">Papabuck</div></div>
+      <div class="meme-card"><img src="img/memes/papachina.jpg" alt="Papachina"><div class="meme-title">Papachina</div></div>
+      <div class="meme-card"><img src="img/memes/papaedition.jpg" alt="Papaedition"><div class="meme-title">Papaedition</div></div>
+      <div class="meme-card"><img src="img/memes/pepe.jpg" alt="Pepe"><div class="meme-title">Pepe</div></div>
+      <div class="meme-card"><img src="img/memes/pepepharao.jpg" alt="Pepepharao"><div class="meme-title">Pepepharao</div></div>
+      <div class="meme-card"><img src="img/memes/plushies.jpg" alt="Plushies"><div class="meme-title">Plushies</div></div>
+      <div class="meme-card"><img src="img/memes/pope.jpg" alt="Pope"><div class="meme-title">Pope</div></div>
+      <div class="meme-card"><img src="img/memes/pope1.jpg" alt="Pope1"><div class="meme-title">Pope1</div></div>
+      <div class="meme-card"><img src="img/memes/poseidon.jpg" alt="Poseidon"><div class="meme-title">Poseidon</div></div>
+      <div class="meme-card"><img src="img/memes/pressplay.jpg" alt="Pressplay"><div class="meme-title">Pressplay</div></div>
+      <div class="meme-card"><img src="img/memes/projectb59.jpg" alt="Projectb59"><div class="meme-title">Projectb59</div></div>
+      <div class="meme-card"><img src="img/memes/pulpfiction.jpg" alt="Pulpfiction"><div class="meme-title">Pulpfiction</div></div>
+      <div class="meme-card"><img src="img/memes/pulpmag.jpg" alt="Pulpmag"><div class="meme-title">Pulpmag</div></div>
+      <div class="meme-card"><img src="img/memes/realroger.jpg" alt="Realroger"><div class="meme-title">Realroger</div></div>
+      <div class="meme-card"><img src="img/memes/rogerfly.jpg" alt="Rogerfly"><div class="meme-title">Rogerfly</div></div>
+      <div class="meme-card"><img src="img/memes/ronaldo.jpg" alt="Ronaldo"><div class="meme-title">Ronaldo</div></div>
+      <div class="meme-card"><img src="img/memes/satoshibd.jpg" alt="Satoshibd"><div class="meme-title">Satoshibd</div></div>
+      <div class="meme-card"><img src="img/memes/saylor.jpg" alt="Saylor"><div class="meme-title">Saylor</div></div>
+      <div class="meme-card"><img src="img/memes/scotty.png" alt="Scotty"><div class="meme-title">Scotty</div></div>
+      <div class="meme-card"><img src="img/memes/severance.jpg" alt="Severance"><div class="meme-title">Severance</div></div>
+      <div class="meme-card"><img src="img/memes/sq7.jpg" alt="Sq7"><div class="meme-title">Sq7</div></div>
+      <div class="meme-card"><img src="img/memes/theblueprint.png" alt="Theblueprint"><div class="meme-title">Theblueprint</div></div>
+      <div class="meme-card"><img src="img/memes/theylive.jpg" alt="Theylive"><div class="meme-title">Theylive</div></div>
+      <div class="meme-card"><img src="img/memes/tobey.jpg" alt="Tobey"><div class="meme-title">Tobey</div></div>
+      <div class="meme-card"><img src="img/memes/topsecret.jpg" alt="Topsecret"><div class="meme-title">Topsecret</div></div>
+      <div class="meme-card"><img src="img/memes/tron.jpg" alt="Tron"><div class="meme-title">Tron</div></div>
+      <div class="meme-card"><img src="img/memes/trump.jpg" alt="Trump"><div class="meme-title">Trump</div></div>
+      <div class="meme-card"><img src="img/memes/trumpgamer.jpg" alt="Trumpgamer"><div class="meme-title">Trumpgamer</div></div>
+      <div class="meme-card"><img src="img/memes/vhs80.jpg" alt="Vhs80"><div class="meme-title">Vhs80</div></div>
+      <div class="meme-card"><img src="img/memes/wecandoit.jpg" alt="Wecandoit"><div class="meme-title">Wecandoit</div></div>
+      <div class="meme-card"><img src="img/memes/wen.jpg" alt="Wen"><div class="meme-title">Wen</div></div>
+      <div class="meme-card"><img src="img/memes/wob.jpg" alt="Wob"><div class="meme-title">Wob</div></div>
+      <div class="meme-card"><img src="img/memes/would.jpg" alt="Would"><div class="meme-title">Would</div></div>
+      <div class="meme-card"><img src="img/memes/wow.jpg" alt="Wow"><div class="meme-title">Wow</div></div>
       <div class="meme-card"><img src="img/memes/zeus.jpg" alt="Zeus"><div class="meme-title">Zeus</div></div>
     </div>
-    <a href="press-kit.html" class="back-button">← Back to Press Kit</a>
   </div>
 </body>
 </html>
