@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buckazoids</title>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" 
+    rel="stylesheet"
+  />
+  <style>
+    /* ===== Global Reset ===== */
+    * { margin:0; padding:0; box-sizing:border-box }
+    body {
+      font-family:'Sora',sans-serif;
+      background:#151b1d;
+      color:#fff3e2;
+      line-height:1.4;
+    }
+    a { text-decoration:none; color:inherit }
+
+    /* ===== Header / Nav ===== */
+    .header {
+      background:#0f1315;
+      padding:20px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.7);
+    }
+    nav {
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+    }
+    .nav-button {
+      font-weight:600;
+      padding:.4rem .8rem;
+      border-bottom:2px solid transparent;
+      transition:color .2s, border-color .2s;
+    }
+    .nav-button:hover {
+      color:#feb73f;
+    }
+    .nav-button.active {
+      color:#feb73f;
+      border-color:#feb73f;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align:center;
+      padding:80px 20px;
+    }
+    .hero h1 {
+      font-size:3rem;
+      margin-bottom:1rem;
+    }
+    .hero p {
+      font-size:1.25rem;
+      margin-bottom:2rem;
+      max-width:600px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .buttons {
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+    .btn {
+      background:#f77f00;
+      color:#151b1d;
+      padding:12px 24px;
+      border-radius:6px;
+      font-weight:600;
+      transition:background .3s, transform .2s;
+    }
+    .btn:hover {
+      background:#feb73f;
+      transform:scale(1.05);
+    }
+    .wallet-input {
+      padding:12px;
+      border:none;
+      border-radius:6px;
+      font-size:1rem;
+      width:280px;
+    }
+    .btn-outline {
+      background:transparent;
+      border:2px solid #f77f00;
+      color:#f77f00;
+      padding:10px 22px;
+      border-radius:6px;
+      font-weight:600;
+      transition:background .3s, color .3s, transform .2s;
+    }
+    .btn-outline:hover {
+      background:#f77f00;
+      color:#151b1d;
+      transform:scale(1.05);
+    }
+
+    /* ===== Responsive ===== */
+    @media(max-width:600px) {
+      .hero h1 { font-size:2.2rem; }
+      .hero p  { font-size:1rem; }
+      .wallet-input { width:200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="header">
+    <nav>
+      <a href="index.html"                       class="nav-button active">Home</a>
+      <a href="buckazoids-meme-gallery.html"     class="nav-button">Meme Gallery</a>
+      <a href="buckazoids-lore.html"             class="nav-button">Lore</a>
+      <a href="press-kit.html"                   class="nav-button">Press Kit</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Buckazoids</h1>
+    <p>Before Bitcoin, there were Buckazoids. Lost digital currency. Now community-owned.</p>
+    <div class="buttons">
+      <a href="get-started.html" class="btn">Get started with Buckazoids</a>
+      <input type="text" class="wallet-input" placeholder="BQQzEvYT4knThhkSPBvSKBLg1LEczisWLhx5ydJj..." />
+      <a href="buy.html" class="btn-outline">Buy Buckazoids</a>
+    </div>
+  </section>
+
+</body>
+</html>
 
