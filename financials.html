@@ -68,20 +68,13 @@
     }
 
     /* ===== Media Cropping ===== */
-    .card-media {
-      width:100%;
-      height:200px;       /* compact height */
-      overflow:hidden;
-      background:#000;    /* fallback bg */
-    }
-    .card-media img,
-    .card-media video {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;  /* center-crop */
-      display:block;
-    }
+.card-media {
+  width: 100%;
+  height: 240px;       /* ↑ was 200px, now a bit taller so the rocket shows */
+  overflow: hidden;
+  background: #000;
+}
+
     /* hide default controls UI */
     .card-media video::-webkit-media-controls,
     .card-media video::-webkit-media-controls-enclosure {
