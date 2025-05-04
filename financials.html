@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Financials & Treasury</title>
+  <title>Financials &amp; Treasury</title>
   <link 
     href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" 
     rel="stylesheet"
   />
   <style>
     /* ===== Reset & Base ===== */
-    * { margin:0; padding:0; box-sizing:border-box }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:'Sora',sans-serif;
-      background:#151b1d;
-      color:#fff3e2;
+      background:#151b1d; color:#fff3e2;
       line-height:1.4;
     }
-    a { text-decoration:none; color:inherit }
+    a { text-decoration:none; color:inherit; }
 
-    /* ===== Header / Nav ===== */
+    /* ===== Header & Nav ===== */
     .header {
       background:#0f1315; padding:20px;
       box-shadow:0 2px 6px rgba(0,0,0,0.7);
@@ -32,18 +31,18 @@
       border-bottom:2px solid transparent;
       transition:color .2s, border-color .2s;
     }
-    .nav-button:hover { color:#feb73f }
+    .nav-button:hover { color:#feb73f; }
     .nav-button.active {
       color:#feb73f; border-color:#feb73f;
     }
 
-    /* ===== Page Wrapper & Title ===== */
+    /* ===== Page Wrapper ===== */
     .container {
       max-width:1200px; margin:40px auto; padding:0 20px;
     }
     h1 {
-      font-size:2.5rem; text-align:center; margin-bottom:40px;
-      font-weight:700;
+      font-size:2.5rem; text-align:center;
+      margin-bottom:40px; font-weight:700;
     }
 
     /* ===== 3-Column Grid ===== */
@@ -51,70 +50,84 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:30px; margin-bottom:40px;
+      align-items:start;
     }
 
     /* ===== Card ===== */
     .card {
-      background:#02314d; border-radius:12px;
-      overflow:hidden; box-shadow:0 0 20px rgba(247,127,0,0.3);
+      background:#02314d;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 0 20px rgba(247,127,0,0.3);
+      transition:transform .3s,box-shadow .3s;
       display:flex; flex-direction:column;
-      height: 100%; /* make all cards equal-height */
     }
     .card:hover {
       transform:translateY(-5px);
       box-shadow:0 0 30px rgba(247,127,0,0.6);
     }
 
-    /* ===== Media (images & videos) ===== */
+    /* ===== Media Cropping ===== */
     .card-media {
-      position:relative;
       width:100%;
-      /* no fixed height so it grows to the media’s real aspect ratio */
+      height:200px;       /* compact height */
+      overflow:hidden;
+      background:#000;    /* fallback bg */
     }
     .card-media img,
     .card-media video {
-      width:100%; height:auto; display:block;
+      width:100%;
+      height:100%;
       object-fit:cover;
+      object-position:center;  /* center-crop */
+      display:block;
     }
-    /* hide video controls */
+    /* hide default controls UI */
     .card-media video::-webkit-media-controls,
     .card-media video::-webkit-media-controls-enclosure {
-      display:none !important;
+      display:none!important;
     }
 
-    /* ===== Content ===== */
     .card-content {
-      padding:20px; flex:1;
-      display:flex; flex-direction:column; align-items:center;
-      justify-content:space-between;
+      padding:20px;
+      flex:1;
+      display:flex; flex-direction:column;
+      align-items:center;
     }
     .card-content h2 {
-      font-size:1.75rem; margin-bottom:.75rem;
-      text-align:center; font-weight:600;
+      font-size:1.75rem;
+      margin-bottom:.75rem;
+      font-weight:600;
+      text-align:center;
     }
     .card-content p {
-      text-align:center; flex:1;
+      flex:1;
+      text-align:center;
+      margin-bottom:1rem;
     }
 
     /* ===== Buttons ===== */
-    .card-button,
-    .back-button {
-      background:#f77f00; color:#151b1d;
-      font-weight:600; border-radius:6px;
-      text-align:center; display:inline-block;
-      padding:10px 20px; margin-top:20px;
+    .card-button, .back-button {
+      display:inline-block;
+      background:#f77f00;
+      color:#151b1d;
+      font-weight:600;
+      padding:10px 20px;
+      border-radius:6px;
       box-shadow:0 0 10px rgba(247,127,0,0.8);
       transition:background .3s, transform .2s, box-shadow .3s;
+      text-align:center;
     }
-    .card-button:hover,
-    .back-button:hover {
-      background:#feb73f; transform:scale(1.05);
+    .card-button:hover, .back-button:hover {
+      background:#feb73f;
+      transform:scale(1.05);
       box-shadow:0 0 15px rgba(247,127,0,1);
     }
 
-    /* ===== Back Link ===== */
+    /* ===== Back Button ===== */
     .back-button {
-      width:200px; margin:0 auto 40px; display:block;
+      margin:0 auto 40px;
+      width:200px;
     }
 
     /* ===== Responsive ===== */
@@ -129,7 +142,7 @@
     <nav>
       <a href="index.html" class="nav-button">Home</a>
       <a href="buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank">Lore</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank" rel="noopener">Lore</a>
       <a href="press-kit.html" class="nav-button">Press Kit</a>
       <a href="financials.html" class="nav-button active">Financials</a>
     </nav>
@@ -149,7 +162,8 @@
           <h2>Treasury</h2>
           <p>View our Buckazoids multi-sig treasury dashboard.</p>
           <a href="https://app.squads.so/squads/A75K8MS17zwkPDwGTaGGKZgaGic9XgoyfkyFj6zVhNvd/home"
-             class="card-button" target="_blank" rel="noopener">View Treasury</a>
+             target="_blank" rel="noopener"
+             class="card-button">View Treasury</a>
         </div>
       </div>
 
@@ -162,7 +176,8 @@
           <h2>Accounting</h2>
           <p>Access our live books via Google Sheets.</p>
           <a href="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/edit"
-             class="card-button" target="_blank" rel="noopener">Open Sheets</a>
+             target="_blank" rel="noopener"
+             class="card-button">Open Sheets</a>
         </div>
       </div>
 
