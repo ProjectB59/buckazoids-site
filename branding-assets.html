@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Branding Assets — Buckazoids</title>
+
+  <!-- 1) Pixel + mono fonts (served via Google Fonts) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --neon-color: #f77f00;
+      --neon-glow: rgba(247,127,0,0.8);
+      --bg-dark: #0a0c13;
+      --panel-dark: #1b2a3d;
+      --text-light: #e0e0e0;
+    }
+
+    /* global reset */
+    * { margin:0; padding:0; box-sizing:border-box }
+    body {
+      font-family: 'Roboto Mono', monospace;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* CRT scanlines */
+    body::before {
+      content:''; position:fixed;top:0;left:0;right:0;bottom:0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%);
+      z-index:-2;
+    }
+    body::after {
+      content:''; position:fixed;top:0;left:0;right:0;bottom:0;
+      background: repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 2px);
+      z-index:-1;
+    }
+
+    /* neon flicker */
+    @keyframes neon-flicker {
+      0%,19%,21%,23%,25%,54%,56%,100% { opacity:1 }
+      20%,24%,55%               { opacity:.4 }
+    }
+
+    /* header */
+    header {
+      text-align:center;
+      padding:2rem 1rem;
+    }
+    .hero-title {
+      font-family:'Press Start 2P',cursive;
+      font-size:1.8rem;
+      color:var(--neon-color);
+      text-shadow:
+        0 0 4px var(--neon-color),
+        0 0 8px var(--neon-color),
+        0 0 16px var(--neon-color);
+      animation:neon-flicker 3s infinite;
+    }
+    .hero-sub {
+      margin-top:.5rem;
+      font-size:.9rem;
+      color:rgba(255,255,255,.7);
+    }
+
+    /* cards grid */
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:1.5rem;
+      padding:1rem;
+      max-width:1200px;
+      margin:0 auto 2rem;
+    }
+
+    /* individual card */
+    .card {
+      background:var(--panel-dark);
+      border:4px solid var(--neon-color);
+      border-radius:8px;
+      box-shadow:0 0 10px var(--neon-glow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 0 20px var(--neon-glow);
+    }
+    .card img {
+      width:100%; height:120px;
+      object-fit:cover;
+    }
+    .card h3 {
+      font-family:'Press Start 2P',cursive;
+      font-size:.9rem;
+      color:var(--neon-color);
+      text-align:center;
+      padding:.75rem 0;
+      text-shadow:0 0 4px var(--neon-color);
+    }
+    .card p {
+      flex:1;
+      padding:0 .75rem 1rem;
+      font-size:.85rem;
+      text-align:center;
+      color:rgba(224,224,224,.9);
+    }
+    .card button {
+      margin:0 auto 1rem;
+      padding:.5rem 1rem;
+      font-family:'Press Start 2P';
+      font-size:.75rem;
+      background:var(--neon-color);
+      color:var(--bg-dark);
+      border:none;
+      border-radius:4px;
+      box-shadow:0 0 8px var(--neon-glow);
+      cursor:pointer;
+      transition:transform .1s,box-shadow .2s;
+    }
+    .card button:hover {
+      transform:scale(.95);
+      box-shadow:0 0 12px var(--neon-glow);
+    }
+
+    /* download-all CTA */
+    .download-all {
+      text-align:center;
+      margin-bottom:1.5rem;
+    }
+    .download-all a {
+      display:inline-block;
+      padding:.75rem 2rem;
+      background:var(--neon-color);
+      color:var(--bg-dark);
+      font-family:'Press Start 2P';
+      text-shadow:0 0 4px var(--neon-glow);
+      border-radius:6px;
+      box-shadow:0 0 10px var(--neon-glow);
+      transition:transform .1s,box-shadow .2s;
+    }
+    .download-all a:hover {
+      transform:scale(.95);
+      box-shadow:0 0 15px var(--neon-glow);
+    }
+
+    /* press contact */
+    .contact {
+      text-align:center;
+      margin:2rem 0;
+      font-size:.9rem;
+      color:rgba(255,255,255,.7);
+    }
+    .contact a {
+      color:var(--neon-color);
+      text-decoration:underline;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar { width:12px }
+    ::-webkit-scrollbar-track { background:rgba(255,255,255,0.05) }
+    ::-webkit-scrollbar-thumb {
+      background:var(--neon-color);
+      border-radius:6px;
+      box-shadow:0 0 5px var(--neon-glow);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- hero -->
+  <header>
+    <div class="hero-title">BRANDING ASSETS</div>
+    <div class="hero-sub">Press START to grab the goods →</div>
+  </header>
+
+  <!-- cards -->
+  <section class="cards">
+    <div class="card">
+      <img src="img/assets/color-palette.png" alt="Color Palette">
+      <h3>Choose Your Power</h3>
+      <p>Download our official color swatches (PNG/SVG).</p>
+      <button onclick="window.open('assets/color-palette.zip')">DOWNLOAD</button>
+    </div>
+
+    <div class="card">
+      <img src="img/assets/logos.png" alt="Logos">
+      <h3>Unlock Logos</h3>
+      <p>Grab PNG, SVG &amp; AI versions of our logos.</p>
+      <button onclick="window.open('assets/logos.zip')">DOWNLOAD</button>
+    </div>
+
+    <div class="card">
+      <img src="img/assets/icons.png" alt="Icons">
+      <h3>Equip Icons</h3>
+      <p>Pixel &amp; vector icons for UI/marketing.</p>
+      <button onclick="window.open('assets/icons.zip')">DOWNLOAD</button>
+    </div>
+
+    <div class="card">
+      <img src="img/assets/templates.png" alt="Templates">
+      <h3>Load Templates</h3>
+      <p>Press-kit PDF, social graphics &amp; slide decks.</p>
+      <button onclick="window.open('assets/templates.zip')">DOWNLOAD</button>
+    </div>
+  </section>
+
+  <!-- download all -->
+  <div class="download-all">
+    <a href="assets/media-kit-full.zip">PRESS START TO DOWNLOAD ALL</a>
+  </div>
+
+  <!-- press contact -->
+  <div class="contact">
+    For press inquiries, email <a href="mailto:press@projectb59.com">press@projectb59.com</a>
+  </div>
+
+</body>
+</html>
