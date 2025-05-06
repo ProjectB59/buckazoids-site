@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Asset Preview — Buckazoids</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Branding Assets — Buckazoids</title>
 
   <!-- arcade pixel font -->
   <link
@@ -15,117 +15,66 @@
     :root {
       --neon:    #f77f00;
       --glow:    rgba(247,127,0,0.8);
-      --bg:      #151b1d;
-      --panel:   #02314d;
+      --bg:      #0a0c13;
+      --panel:   #1b2a3d;
       --text:    #e0e0e0;
     }
-    /* reset */
     * { margin:0; padding:0; box-sizing:border-box }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Press Start 2P', cursive;
-      text-align: center;
-      padding: 2rem;
+      font-family:'Press Start 2P',cursive;
+      background:var(--bg);
+      color:var(--text);
+      text-align:center;
+      min-height:100vh;
+      padding:2rem 1rem;
     }
-    h1 {
-      font-size: 1.8rem;
-      color: var(--neon);
-      text-shadow:
-        0 0 4px var(--neon),
-        0 0 8px var(--neon),
-        0 0 16px var(--neon);
-      margin-bottom: .5rem;
-      animation: flicker 3s infinite;
+    .hero-title {
+      font-size:1.8rem;
+      color:var(--neon);
+      text-shadow:0 0 4px var(--neon),0 0 8px var(--neon),0 0 16px var(--neon);
+      animation:flicker 3s infinite;
     }
     @keyframes flicker {
       0%,19%,21%,23%,25%,54%,56%,100% { opacity:1 }
       20%,24%,55% { opacity:.4 }
     }
-    p { margin-bottom: 2rem; font-size:.9rem; }
-
-    /* grid */
-    .thumbs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto 2rem;
+    .hero-sub {
+      margin-top:.5rem;
+      font-size:.9rem;
+      color:rgba(255,255,255,.7);
     }
 
-    /* each box */
-    .thumb {
-      background: var(--panel);
-      border: 4px solid var(--neon);
-      border-radius: 6px;
-      box-shadow: 0 0 12px var(--glow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      transition: transform .2s, box-shadow .2s;
+    .download-preview {
+      margin:2rem auto;
     }
-    .thumb:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px var(--glow);
+    .download-preview a {
+      display:inline-block;
+      padding:.75rem 2rem;
+      background:var(--neon);
+      color:var(--bg);
+      text-decoration:none;
+      box-shadow:0 0 10px var(--glow);
+      transition:transform .1s,box-shadow .2s;
+      font-size:.75rem;
     }
-    .thumb img {
-      width: 100%;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: .75rem;
-    }
-    .thumb div {
-      font-size: .8rem;
-      margin-bottom: .5rem;
-      color: var(--neon);
-      text-shadow: 0 0 4px var(--neon);
-    }
-    .thumb a {
-      font-size: .65rem;
-      padding: .5rem 1rem;
-      background: var(--neon);
-      color: var(--bg);
-      text-decoration: none;
-      border-radius: 4px;
-      box-shadow: 0 0 8px var(--glow);
-      transition: transform .1s, box-shadow .2s;
-    }
-    .thumb a:hover {
-      transform: scale(.95);
-      box-shadow: 0 0 12px var(--glow);
+    .download-preview a:hover {
+      transform:scale(.95);
+      box-shadow:0 0 15px var(--glow);
     }
   </style>
 </head>
 <body>
 
-  <h1>🔍 Preview Assets</h1>
-  <p>Browse below, or grab each ZIP directly.</p>
+  <div class="hero-title">BRANDING ASSETS</div>
+  <div class="hero-sub">Download logos, templates &amp; more for press &amp; community.</div>
 
-  <div class="thumbs">
-    <div class="thumb">
-      <img src="color-palette.png" alt="Color Palette">
-      <div>Color Palette</div>
-      <a href="colors.zip" download>DOWNLOAD</a>
-    </div>
-    <div class="thumb">
-      <img src="logos.png" alt="Logos">
-      <div>Unlock Logos</div>
-      <a href="logos.zip" download>DOWNLOAD</a>
-    </div>
-    <div class="thumb">
-      <img src="icons.png" alt="Icons">
-      <div>Equip Icons</div>
-      <a href="icons.zip" download>DOWNLOAD</a>
-    </div>
-    <div class="thumb">
-      <img src="templates.png" alt="Templates">
-      <div>Load Templates</div>
-      <a href="templates.zip" download>DOWNLOAD</a>
-    </div>
+  <div class="download-preview">
+    <a href="img/assets/index.html">👾 Preview Assets</a>
   </div>
+
+  <a href="index.html" style="font-size:.65rem; color:rgba(255,255,255,.7); text-decoration:underline;">
+    ← Back to Home
+  </a>
 
 </body>
 </html>
-
