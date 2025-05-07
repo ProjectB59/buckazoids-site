@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Press Kit & Media Center</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <title>Press Kit &amp; Media Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     /* Reset & Base */
     * { margin:0; padding:0; box-sizing:border-box }
@@ -15,196 +12,203 @@
       font-family: 'Sora', sans-serif;
       background: #151b1d;
       color: #fff3e2;
-      line-height: 1.4;
+      min-height:100vh;
     }
-
     /* Header & Nav */
     .header {
-      background: #0f1315;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      background: #0f1315; padding:20px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.7);
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+    nav { display:flex; justify-content:center; gap:1rem; }
     .nav-button {
-      font-weight: 600;
-      padding: .4rem .8rem;
-      border-bottom: 2px solid transparent;
+      color:#fff3e2; text-decoration:none;
+      font-weight:600; padding:.4rem .8rem;
+      border-bottom:2px solid transparent;
       transition: color .2s, border-color .2s;
     }
-    .nav-button:hover { color: #feb73f }
+    .nav-button:hover { color:#feb73f }
     .nav-button.active {
-      color: #feb73f;
-      border-color: #feb73f;
+      color:#feb73f; border-color:#feb73f;
     }
-
-    /* Container & Title */
+    /* Grid of Cards */
     .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width:1200px; margin:40px auto; padding:0 1rem;
     }
     h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: 700;
+      text-align:center; font-size:2.5rem; margin-bottom:2rem;
     }
-
-    /* 3-column grid */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-bottom: 40px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
     }
-
-    /* Card */
     .card {
-      background: #02314d;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(247,127,0,0.3);
-      transition: transform .3s, box-shadow .3s;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
+      background:#02314d; border-radius:12px;
+      overflow:hidden; box-shadow:0 0 20px rgba(247,127,0,0.3);
+      display:flex; flex-direction:column;
+      transition:transform .2s,box-shadow .2s;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(247,127,0,0.6);
+      transform:translateY(-5px);
+      box-shadow:0 0 30px rgba(247,127,0,0.6);
     }
     .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      object-position: top;
-      display: block;
+      width:100%; height:200px; object-fit:cover;
     }
     .card-content {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding:1.5rem; flex:1; display:flex;
+      flex-direction:column; align-items:center;
+      text-align:center;
     }
     .card-content h2 {
-      font-size: 1.75rem;
-      margin-bottom: .75rem;
-      text-align: center;
-      font-weight: 600;
+      margin-bottom:.75rem; font-size:1.75rem;
     }
     .card-content p {
-      flex: 1;
-      text-align: center;
+      flex:1; margin-bottom:1.5rem;
     }
-
-    /* Card Button */
     .card-button {
-      margin-top: 20px;
-      width: 160px;
-      padding: 10px 0;
-      background: #f77f00;
-      color: #151b1d;
-      font-weight: 600;
-      border-radius: 6px;
-      text-align: center;
-      transition: background .3s, transform .2s;
-      text-decoration: none;
-      display: inline-block;
+      display:inline-block;
+      background:#f77f00; color:#151b1d;
+      padding:.75rem 1.5rem; text-decoration:none;
+      border-radius:6px; font-weight:600;
+      transition:transform .1s,box-shadow .2s;
     }
     .card-button:hover {
-      background: #feb73f;
-      transform: scale(1.05);
+      transform:scale(1.05);
+      box-shadow:0 0 12px rgba(247,127,0,0.8);
     }
-
     /* Back Button */
     .back-button {
-      display: block;
-      width: 200px;
-      margin: 0 auto 40px;
-      padding: 10px 0;
-      background: #f77f00;
-      color: #151b1d;
-      font-weight: 600;
-      border-radius: 6px;
-      text-align: center;
-      transition: background .3s, transform .2s;
-      text-decoration: none;
+      display:block; margin:3rem auto 1rem;
+      background:#f77f00; color:#151b1d;
+      padding:.75rem 1.5rem; text-decoration:none;
+      border-radius:6px; font-weight:600;
+      transition:transform .1s,box-shadow .2s;
+      text-align:center;
+      width:200px;
     }
     .back-button:hover {
-      background: #feb73f;
-      transform: scale(1.05);
+      transform:scale(1.05);
+      box-shadow:0 0 12px rgba(247,127,0,0.8);
     }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
+    /* Hidden Konami controllers (mobile only) */
+    #controls {
+      display:none; /* only mobile */
+      position:fixed; bottom:20px; left:50%;
+      transform:translateX(-50%);
+      z-index:2000;
     }
-    @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
+    #controls button {
+      width:50px; height:50px; margin:4px;
+      background:#02314d; color:#fff3e2; border:none;
+      border-radius:6px; font-size:1.2rem;
+      box-shadow:0 0 6px rgba(247,127,0,0.5);
+      transition:background .2s,transform .1s;
     }
+    #controls button:active {
+      background:#feb73f; transform:scale(0.95);
+    }
+    @media(max-width:600px){
+      #controls { display:flex; flex-wrap:wrap; justify-content:center; }
+    }
+    /* Fallback single controller icon */
+    #fallback {
+      position:fixed; bottom:20px; right:20px;
+      width:40px; height:40px; opacity:.4;
+      background:url('img/controller.png') center/contain no-repeat;
+      cursor:pointer; transition:opacity .2s;
+    }
+    #fallback:hover { opacity:1 }
   </style>
 </head>
 <body>
 
-  <!-- Header / Nav -->
+  <!-- Header -->
   <div class="header">
     <nav>
       <a href="index.html" class="nav-button">Home</a>
-      <a href="buckazoids-meme-gallery.html" class="nav-button">Meme Gallery</a>
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about"
-         class="nav-button" target="_blank">Lore</a>
+      <a href="buckazoids-meme-gallery.html" class="nav-button">Memes</a>
       <a href="press-kit.html" class="nav-button active">Press Kit</a>
+      <a href="financials.html" class="nav-button">Financials</a>
     </nav>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="container">
-    <h1>Press Kit & Media Center</h1>
+    <h1>Press Kit &amp; Media Center</h1>
     <div class="grid">
-
-      <!-- Card 1 -->
       <div class="card">
         <img src="img/meme-gallery.jpg" alt="Meme Gallery">
         <div class="card-content">
           <h2>Meme Gallery</h2>
-          <p>Curated memes inspired by the Buckazoids retro-futurist spirit. Bright, bold, and shareable.</p>
+          <p>Bright, bold memes inspired by Buckazoids’ retro-futurist spirit.</p>
           <a href="buckazoids-meme-gallery.html" class="card-button">View Gallery</a>
         </div>
       </div>
-
-      <!-- Card 2 -->
       <div class="card">
         <img src="img/branding-assets.jpg" alt="Branding Assets">
         <div class="card-content">
           <h2>Branding Assets</h2>
-          <p>Download logos, fonts, and templates for media, journalists, and the community.</p>
-          <!-- UPDATED LINK: now points to HTML page -->
-          <a href="branding-assets.html" class="card-button">Download Assets</a>
+          <p>Logos, fonts, and printable templates for journalists &amp; fans.</p>
+          <a href="branding-assets.zip" class="card-button" download>Download Assets</a>
         </div>
       </div>
-
-      <!-- Card 3: Lore -->
       <div class="card">
         <img src="img/buckazoids-lore.jpg" alt="Buckazoids Lore">
         <div class="card-content">
           <h2>Buckazoids Lore</h2>
-          <p>Dive into the full story of Buckazoids, its origin, and digital legacy.</p>
-          <a href="https://buckazoids-bitcoin-echo.lovable.app/about"
-             class="card-button" target="_blank" rel="noopener">Read Lore</a>
+          <p>Dive into the full origin story &amp; digital legacy of Buckazoids.</p>
+          <a href="buckazoids-lore.html" class="card-button">Read Lore</a>
         </div>
       </div>
-
     </div>
 
-    <!-- Back to Home -->
     <a href="index.html" class="back-button">← Back to Home</a>
   </div>
 
+  <!-- Hidden mobile buttons for Konami -->
+  <div id="controls">
+    <button data-key="UP">↑</button>
+    <button data-key="DOWN">↓</button>
+    <button data-key="LEFT">←</button>
+    <button data-key="RIGHT">→</button>
+    <button data-key="B">B</button>
+    <button data-key="A">A</button>
+  </div>
+
+  <!-- Fallback controller icon -->
+  <div id="fallback" title="Secret" onclick="location='secret-page.html'"></div>
+
+  <!-- Konami Code Script -->
+  <script>
+    // Desktop Konami
+    (function(){
+      const pattern = '38384040373937396665'; // ↑↑↓↓←→←→BA
+      let input = '';
+      window.addEventListener('keydown', e => {
+        input += e.keyCode;
+        if(input.length > pattern.length) 
+          input = input.slice(-pattern.length);
+        if(input === pattern) {
+          location = 'secret-page.html';
+        }
+      });
+    })();
+
+    // Mobile button Konami
+    (function(){
+      const seq = ['UP','UP','DOWN','DOWN','LEFT','RIGHT','LEFT','RIGHT','B','A'];
+      let buf = [];
+      document.querySelectorAll('#controls button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          buf.push(btn.dataset.key);
+          if(buf.length > seq.length) buf.shift();
+          if(buf.join('') === seq.join('')) {
+            location = 'secret-page.html';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
-
