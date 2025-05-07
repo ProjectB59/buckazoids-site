@@ -5,7 +5,7 @@
   <title>🔍 Preview Assets — Buckazoids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Pixel font for arcade feel -->
+  <!-- Arcade pixel font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
@@ -16,72 +16,70 @@
       --panel: #1b2a3d;
       --text: #e0e0e0;
     }
-    /* Reset */
-    * { margin:0; padding:0; box-sizing:border-box }
+    /* reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:'Press Start 2P',cursive;
       background:var(--bg);
       color:var(--text);
-      min-height:100vh;
-      overflow-x:hidden;
       text-align:center;
       padding:2rem 1rem;
       position:relative;
+      min-height:100vh;
+      overflow-x:hidden;
     }
     /* CRT scanlines */
     body::before {
       content:"";position:fixed;inset:0;
       background:
-        repeating-linear-gradient(0deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 2px),
-        repeating-linear-gradient(90deg,rgba(255,255,255,0.03) 0 1px,transparent 1px 2px);
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 2px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 2px);
       z-index:-2;
     }
     body::after {
       content:"";position:fixed;inset:0;
-      background:repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px,transparent 1px 3px);
+      background: repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 3px);
       z-index:-1;
     }
-    /* Neon flicker */
+    /* neon flicker */
     @keyframes neon-flicker {
-      0%,18%,20%,22%,24%,54%,56%,100%{opacity:1}
-      19%,23%,55%{opacity:.4}
+      0%,18%,20%,22%,24%,54%,56%,100% { opacity:1 }
+      19%,23%,55%                 { opacity:.4 }
     }
-    /* Floating squares */
-    .floaters{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:-3}
+    /* floating squares */
+    .floaters{position:absolute;inset:0;pointer-events:none;z-index:-3}
     .floaters div {
-      position:absolute;width:8px;height:8px;
-      background:var(--neon);opacity:.2;
+      position:absolute; width:8px; height:8px;
+      background:var(--neon); opacity:.2;
       animation:drift 10s linear infinite;
     }
     @keyframes drift {
-      0%   {transform:translate3d(var(--x),var(--y),0) scale(0);}
-      50%  {opacity:.5;}
-      100% {transform:translate3d(calc(var(--x)+var(--dx)),calc(var(--y)+var(--dy)),0) scale(1);opacity:0;}
+      0%   { transform:translate3d(var(--x),var(--y),0) scale(0); }
+      50%  { opacity:.5; }
+      100% { transform:translate3d(calc(var(--x)+var(--dx)),calc(var(--y)+var(--dy)),0) scale(1); opacity:0; }
     }
 
     header h1 {
-      font-size:1.5rem;
-      color:var(--neon);
-      text-shadow:0 0 4px var(--neon),0 0 8px var(--neon),0 0 16px var(--neon);
+      font-size:1.5rem; color:var(--neon);
+      text-shadow:
+        0 0 4px var(--neon),
+        0 0 8px var(--neon),
+        0 0 16px var(--neon);
       animation:neon-flicker 3s infinite;
     }
     header p {
-      margin-top:.5rem;
-      font-size:.8rem;
+      margin-top:.5rem; font-size:.8rem;
       color:rgba(224,224,224,.7);
     }
 
     .home-btn {
-      display:inline-block;
-      margin:1rem auto 2rem;
+      display:inline-block; margin:1rem auto 2rem;
       padding:.75rem 1.5rem;
-      background:var(--neon);
-      color:var(--bg);
-      text-decoration:none;
-      border-radius:4px;
+      background:var(--neon); color:var(--bg);
+      text-decoration:none; border-radius:4px;
       box-shadow:0 0 8px var(--glow);
-      font-size:.7rem;
       transition:transform .1s,box-shadow .2s;
+      font-size:.7rem;
     }
     .home-btn:hover {
       transform:scale(1.05);
@@ -92,11 +90,9 @@
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
       gap:1.5rem;
-      max-width:900px;
-      margin:0 auto 3rem;
+      max-width:900px; margin:0 auto 3rem;
     }
     .thumb {
-      position:relative;
       background:var(--panel);
       border:4px solid var(--neon);
       border-radius:8px;
@@ -109,29 +105,23 @@
       box-shadow:0 0 20px var(--glow);
     }
     .thumb img {
-      width:100%;height:120px;
-      object-fit:cover;
-      border-radius:4px;
+      width:100%; height:120px;
+      object-fit:cover; border-radius:4px;
       margin-bottom:.75rem;
     }
     .thumb-title {
       color:var(--neon);
-      font-size:.75rem;
-      margin-bottom:.5rem;
+      font-size:.75rem; margin-bottom:.5rem;
       text-shadow:0 0 4px var(--neon);
     }
     .thumb-desc {
-      font-size:.65rem;
-      margin-bottom:1rem;
+      font-size:.65rem; margin-bottom:1rem;
       color:rgba(224,224,224,.8);
     }
     .thumb a {
-      display:inline-block;
-      padding:.5rem 1rem;
-      background:var(--neon);
-      color:var(--bg);
-      text-decoration:none;
-      border-radius:4px;
+      display:inline-block; padding:.5rem 1rem;
+      background:var(--neon); color:var(--bg);
+      text-decoration:none; border-radius:4px;
       box-shadow:0 0 8px var(--glow);
       font-size:.65rem;
       transition:transform .1s,box-shadow .2s;
@@ -147,15 +137,17 @@
   <!-- floating neon squares -->
   <div class="floaters">
     <script>
-      for(let i=0;i<30;i++){
-        const d=document.createElement('div');
-        const x=Math.random()*100+'vw', y=Math.random()*100+'vh';
-        const dx=(Math.random()*200-100)+'vw', dy=(Math.random()*200-100)+'vh';
-        d.style.setProperty('--x',x);
-        d.style.setProperty('--y',y);
-        d.style.setProperty('--dx',dx);
-        d.style.setProperty('--dy',dy);
-        d.style.animationDelay=(Math.random()*-10)+'s';
+      for (let i=0; i<30; i++){
+        const d = document.createElement('div');
+        const x = Math.random()*100 + 'vw',
+              y = Math.random()*100 + 'vh',
+              dx = (Math.random()*200-100)+'vw',
+              dy = (Math.random()*200-100)+'vh';
+        d.style.setProperty('--x', x);
+        d.style.setProperty('--y', y);
+        d.style.setProperty('--dx', dx);
+        d.style.setProperty('--dy', dy);
+        d.style.animationDelay = (Math.random()*-10)+'s';
         document.body.appendChild(d);
       }
     </script>
@@ -166,32 +158,36 @@
     <p>Press START → download your gear</p>
   </header>
 
-  <a href="../index.html" class="home-btn">← BACK TO HOME</a>
+  <a href="index.html" class="home-btn">← BACK TO HOME</a>
 
   <div class="thumbs">
+    <!-- HEX MAP & FONTS -->
     <div class="thumb">
-      <img src="hexmap.png" alt="Hex Map & Fonts">
+      <img src="assets/hexmap.png" alt="Hex Map & Fonts">
       <div class="thumb-title">HEX MAP & FONTS</div>
-      <div class="thumb-desc">Our full hex map & web/OFF-OTF font set</div>
-      <a href="hexmap_fonts.zip" download>DOWNLOAD</a>
+      <div class="thumb-desc">Our full hex map & font set</div>
+      <a href="assets/hexmap_fonts.zip" download>DOWNLOAD</a>
     </div>
+    <!-- LOGOS -->
     <div class="thumb">
-      <img src="logos.png" alt="Logos">
+      <img src="assets/logos.png" alt="Logos">
       <div class="thumb-title">LOGOS</div>
-      <div class="thumb-desc">AI, SVG & PNG versions of our Buckazoids logo</div>
-      <a href="logos.zip" download>DOWNLOAD</a>
+      <div class="thumb-desc">AI, SVG & PNG Buckazoids logos</div>
+      <a href="assets/logos.zip" download>DOWNLOAD</a>
     </div>
+    <!-- ICONS -->
     <div class="thumb">
-      <img src="icons.png" alt="Icons">
+      <img src="assets/icons.png" alt="Icons">
       <div class="thumb-title">ICONS</div>
-      <div class="thumb-desc">Pixel & vector icons for UI, social, merch, etc.</div>
-      <a href="icons.zip" download>DOWNLOAD</a>
+      <div class="thumb-desc">Pixel & vector icons for UI & merch</div>
+      <a href="assets/icons.zip" download>DOWNLOAD</a>
     </div>
+    <!-- TEMPLATES -->
     <div class="thumb">
-      <img src="templates.png" alt="Templates">
+      <img src="assets/templates.png" alt="Templates">
       <div class="thumb-title">TEMPLATES</div>
-      <div class="thumb-desc">Press-kit PDFs, social graphics & slide decks</div>
-      <a href="templates.zip" download>DOWNLOAD</a>
+      <div class="thumb-desc">Press-kit PDFs, social & slide decks</div>
+      <a href="assets/templates.zip" download>DOWNLOAD</a>
     </div>
   </div>
 
