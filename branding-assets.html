@@ -19,6 +19,24 @@
     }
 
     h1 { margin-bottom: 1rem; }
+    
+    /* Home button */
+    .home-btn {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: .5rem 1rem;
+      background: #f77f00;
+      color: #151b1d;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 0 6px rgba(247,127,0,0.8);
+      transition: transform .1s, box-shadow .2s;
+    }
+    .home-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(247,127,0,1);
+    }
 
     /* grid */
     .thumbs {
@@ -48,6 +66,7 @@
       font-weight: 600;
       margin-bottom: .5rem;
       font-size: 1rem;
+      color: #f77f00;
     }
     .thumb-desc {
       font-size: .85rem;
@@ -75,6 +94,7 @@
 <body>
 
   <h1>🔍 Preview Assets</h1>
+  <a href="../index.html" class="home-btn">← Back to Home</a>
   <p>Browse below or grab each ZIP directly.</p>
 
   <div class="thumbs">
