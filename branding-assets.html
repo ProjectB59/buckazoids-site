@@ -1,226 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Branding Assets — Buckazoids</title>
+  <meta charset="UTF-8">
+  <title>🔍 Preview Assets — Buckazoids</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- arcade pixel font + mono fallback -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --neon: #f77f00;
-      --glow: rgba(247,127,0,0.8);
-      --bg: #0a0c13;
-      --panel: #1b2a3d;
-      --text: #e0e0e0;
-    }
-
-    /* reset */
-    * { margin:0; padding:0; box-sizing:border-box }
+    /* Reset & base */
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Roboto Mono', monospace;
-      background: var(--bg);
-      color: var(--text);
-      min-height:100vh;
-      overflow-x:hidden;
+      font-family: 'Sora', sans-serif;
+      background: #151b1d;
+      color: #fff3e2;
+      padding: 2rem;
+      text-align: center;
     }
 
-    /* CRT scanlines overlay */
-    body::before, body::after {
-      content:''; position:fixed; top:0; left:0; right:0; bottom:0; pointer-events:none;
-    }
-    body::before {
-      background:
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%);
-      z-index:-2;
-    }
-    body::after {
-      background: repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 2px);
-      z-index:-1;
+    h1 { margin-bottom: 1rem; }
+
+    /* grid */
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
     }
 
-    /* neon flicker effect */
-    @keyframes flicker {
-      0%,18%,22%,25%,53%,57%,100% { opacity:1 }
-      20%,24%,55%             { opacity:.4 }
+    /* card */
+    .thumb {
+      background: #02314d;
+      border: 2px solid #f77f00;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(247,127,0,0.5);
     }
-
-    header {
-      text-align:center;
-      padding:2rem 1rem;
+    .thumb img {
+      max-width: 100%;
+      height: 100px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto .75rem;
     }
-    .hero {
-      font-family:'Press Start 2P',cursive;
-      font-size:1.8rem;
-      color: var(--neon);
-      text-shadow:
-        0 0 4px var(--neon),
-        0 0 8px var(--neon),
-        0 0 16px var(--neon);
-      animation: flicker 3s infinite;
+    .thumb-title {
+      font-weight: 600;
+      margin-bottom: .5rem;
+      font-size: 1rem;
     }
-    .sub {
-      margin-top:.5rem;
-      font-size:.9rem;
-      color: rgba(255,255,255,.7);
+    .thumb-desc {
+      font-size: .85rem;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 .75rem;
     }
-
-    .cards {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap:1.5rem;
-      padding:1rem;
-      max-width:1200px;
-      margin:0 auto 2rem;
-    }
-
-    .card {
-      background: var(--panel);
-      border:4px solid var(--neon);
-      border-radius:8px;
-      box-shadow: 0 0 10px var(--glow);
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px var(--glow);
-    }
-    .card img {
-      width:100%;
-      height:120px;
-      object-fit:cover;
-    }
-    .card h3 {
-      font-family:'Press Start 2P',cursive;
-      font-size:.9rem;
-      color: var(--neon);
-      text-align:center;
-      padding:.75rem 0;
-      text-shadow: 0 0 4px var(--neon);
-    }
-    .card p {
-      flex:1;
-      padding:0 .75rem 1rem;
-      font-size:.85rem;
-      text-align:center;
-      color: rgba(224,224,224,.9);
-    }
-    .card button {
-      margin:0 auto 1rem;
-      padding:.5rem 1rem;
-      font-family:'Press Start 2P',cursive;
-      font-size:.75rem;
-      background: var(--neon);
-      color: var(--bg);
-      border:none;
-      border-radius:4px;
-      box-shadow: 0 0 8px var(--glow);
-      cursor:pointer;
+    .thumb a {
+      display: inline-block;
+      margin-top: .5rem;
+      padding: .5rem 1rem;
+      background: #f77f00;
+      color: #151b1d;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 0 6px rgba(247,127,0,0.8);
       transition: transform .1s, box-shadow .2s;
     }
-    .card button:hover {
-      transform: scale(.95);
-      box-shadow: 0 0 12px var(--glow);
-    }
-
-    .download-all {
-      text-align:center;
-      margin-bottom:2rem;
-    }
-    .download-all a {
-      display:inline-block;
-      padding:.75rem 2rem;
-      background: var(--neon);
-      color: var(--bg);
-      font-family:'Press Start 2P',cursive;
-      font-size:.85rem;
-      text-shadow: 0 0 4px var(--neon);
-      border-radius:6px;
-      box-shadow: 0 0 10px var(--glow);
-      transition: transform .1s, box-shadow .2s;
-    }
-    .download-all a:hover {
-      transform: scale(.95);
-      box-shadow: 0 0 15px var(--glow);
-    }
-
-    .contact {
-      text-align:center;
-      font-size:.9rem;
-      color: rgba(255,255,255,.7);
-      margin-bottom:2rem;
-    }
-    .contact a {
-      color: var(--neon);
-      text-decoration:underline;
-    }
-
-    /* custom scrollbar */
-    ::-webkit-scrollbar { width:12px }
-    ::-webkit-scrollbar-track { background:rgba(255,255,255,0.05) }
-    ::-webkit-scrollbar-thumb {
-      background: var(--neon);
-      border-radius:6px;
-      box-shadow: 0 0 5px var(--glow);
+    .thumb a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(247,127,0,1);
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <header>
-    <div class="hero">BRANDING ASSETS</div>
-    <div class="sub">Press START to grab the goods →</div>
-  </header>
+  <h1>🔍 Preview Assets</h1>
+  <p>Browse below or grab each ZIP directly.</p>
 
-  <!-- Asset cards -->
-  <section class="cards">
-    <div class="card">
-      <img src="img/assets/color-palette.png" alt="Color Palette">
-      <h3>Choose Your Power</h3>
-      <p>PNG &amp; SVG swatches of our official palette.</p>
-      <button onclick="window.open('assets/color-palette.zip')">DOWNLOAD</button>
+  <div class="thumbs">
+    <!-- Hex Map & Fonts -->
+    <div class="thumb">
+      <img src="hexmap.png" alt="Hex Map & Fonts">
+      <div class="thumb-title">Hex Map &amp; Fonts</div>
+      <div class="thumb-desc">This will have our hex map, and fonts.</div>
+      <a href="hexmap_fonts.zip" download>Download</a>
     </div>
 
-    <div class="card">
-      <img src="img/assets/logos.png" alt="Logos">
-      <h3>Unlock Logos</h3>
-      <p>AI, SVG &amp; PNG versions of our cosmic logo.</p>
-      <button onclick="window.open('assets/logos.zip')">DOWNLOAD</button>
+    <!-- Logos -->
+    <div class="thumb">
+      <img src="logos.png" alt="Logos">
+      <div class="thumb-title">Logos</div>
+      <div class="thumb-desc">AI, SVG &amp; PNG versions of our cosmic logo.</div>
+      <a href="logos.zip" download>Download</a>
     </div>
 
-    <div class="card">
-      <img src="img/assets/icons.png" alt="Icons">
-      <h3>Equip Icons</h3>
-      <p>Pixel &amp; vector icons for UI, UI, and more UI.</p>
-      <button onclick="window.open('assets/icons.zip')">DOWNLOAD</button>
+    <!-- Icons -->
+    <div class="thumb">
+      <img src="icons.png" alt="Icons">
+      <div class="thumb-title">Icons</div>
+      <div class="thumb-desc">Pixel &amp; vector icons for UI, marketing, etc.</div>
+      <a href="icons.zip" download>Download</a>
     </div>
 
-    <div class="card">
-      <img src="img/assets/templates.png" alt="Templates">
-      <h3>Load Templates</h3>
-      <p>Social, slide decks &amp; press-kit PDF templates.</p>
-      <button onclick="window.open('assets/templates.zip')">DOWNLOAD</button>
+    <!-- Templates -->
+    <div class="thumb">
+      <img src="templates.png" alt="Templates">
+      <div class="thumb-title">Templates</div>
+      <div class="thumb-desc">Social, slide decks &amp; press-kit PDF templates.</div>
+      <a href="templates.zip" download>Download</a>
     </div>
-  </section>
-
-  <!-- Download All CTA -->
-  <div class="download-all">
-    <a href="assets/media-kit-full.zip">PRESS START TO DOWNLOAD ALL</a>
-  </div>
-
-  <!-- Press contact -->
-  <div class="contact">
-    For media inquiries: <a href="mailto:press@projectb59.com">press@projectb59.com</a>
   </div>
 
 </body>
