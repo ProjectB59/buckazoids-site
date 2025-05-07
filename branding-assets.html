@@ -224,34 +224,36 @@
   </section>
 
   <!-- Konami + Mobile-tap logic -->
-  <script>
-    (function(){
-      const KONAMI_HEX = "38384040373937396665",
-            bufLen = KONAMI_HEX.length;
-      let buf = "";
+ <script>
+  (function(){
+    const KONAMI_HEX = "38384040373937396665",
+          bufLen = KONAMI_HEX.length;
+    let buf = "";
 
-      // desktop: listen for arrow/B/A keys
-      window.addEventListener("keydown", e=>{
-        buf += e.keyCode.toString(16);
-        if(buf.length>bufLen) buf = buf.slice(-bufLen);
-        if(buf===KONAMI_HEX){
-          window.location = "secret-page.html";
-        }
-      });
+    // desktop: listen for arrow/B/A keys
+    window.addEventListener("keydown", e=>{
+      buf += e.keyCode.toString(16);
+      if(buf.length>bufLen) buf = buf.slice(-bufLen);
+      if(buf===KONAMI_HEX){
+        window.location = "secret-page.html";
+      }
+    });
 
-      // mobile: 7 rapid taps on the Logos image
-      let taps=0, timeout;
-      const logo = document.getElementById("logo-trigger");
-      logo.addEventListener("click", ()=>{
-        taps++;
-        clearTimeout(timeout);
-        timeout = setTimeout(()=> taps=0, 1500);
-        if(taps===7){
-          window.location = "secret-page.html";
-        }
-      });
-    })();
-  </script>
+    // mobile: 7 rapid taps on the Logos image
+let taps = 0, timeout;
+const logo = document.getElementById("logo-trigger");
+logo.addEventListener("click", () => {
+  taps++;
+  console.log("Tapped logos:", taps);  // ✅ JS comment
+  clearTimeout(timeout);
+  timeout = setTimeout(() => taps = 0, 1500);
+  if (taps === 7) {
+    console.log("Redirecting to secret page!");  // ✅ JS comment
+    window.location = "secret-page.html";
+  }
+});
 
+</script>
+  
 </body>
 </html>
