@@ -2,52 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🔍 Preview Assets — Buckazoids</title>
+  <title>🔍 Preview Assets | Buckazoids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
-    /* Reset & base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Sora', sans-serif;
-      background: #151b1d;
-      color: #fff3e2;
-      padding: 2rem;
+    body { 
+      font-family: 'Sora', sans-serif; 
+      background: #151b1d; 
+      color: #fff3e2; 
+      padding: 2rem; 
       text-align: center;
     }
-
     h1 { margin-bottom: 1rem; }
-    
-    /* Home button */
-    .home-btn {
+    .home-link {
       display: inline-block;
-      margin-bottom: 2rem;
-      padding: .5rem 1rem;
-      background: #f77f00;
-      color: #151b1d;
-      font-weight: 600;
-      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      color: #f77f00;
       text-decoration: none;
-      box-shadow: 0 0 6px rgba(247,127,0,0.8);
-      transition: transform .1s, box-shadow .2s;
+      font-weight: 600;
     }
-    .home-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(247,127,0,1);
-    }
-
-    /* grid */
     .thumbs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
       gap: 1.5rem;
       max-width: 800px;
-      margin: 0 auto 2rem;
+      margin: 0 auto;
     }
-
-    /* card */
     .thumb {
       background: #02314d;
       border: 2px solid #f77f00;
@@ -62,16 +41,9 @@
       display: block;
       margin: 0 auto .75rem;
     }
-    .thumb-title {
-      font-weight: 600;
+    .thumb div {
       margin-bottom: .5rem;
-      font-size: 1rem;
-      color: #f77f00;
-    }
-    .thumb-desc {
-      font-size: .85rem;
-      color: rgba(255,255,255,0.8);
-      margin: 0 0 .75rem;
+      font-weight: 600;
     }
     .thumb a {
       display: inline-block;
@@ -92,44 +64,30 @@
   </style>
 </head>
 <body>
-
   <h1>🔍 Preview Assets</h1>
-  <a href="../index.html" class="home-btn">← Back to Home</a>
-  <p>Browse below or grab each ZIP directly.</p>
-
+  <a href="../index.html" class="home-link">← Back to Home</a>
+  <p>Browse below, or grab each ZIP directly.</p>
   <div class="thumbs">
-    <!-- Hex Map & Fonts -->
     <div class="thumb">
-      <img src="hexmap.png" alt="Hex Map & Fonts">
-      <div class="thumb-title">Hex Map &amp; Fonts</div>
-      <div class="thumb-desc">This will have our hex map, and fonts.</div>
-      <a href="hexmap_fonts.zip" download>Download</a>
+      <img src="color-palette.png" alt="Color Palette">
+      <div>Color Palette</div>
+      <a href="colors.zip" download>Download</a>
     </div>
-
-    <!-- Logos -->
     <div class="thumb">
       <img src="logos.png" alt="Logos">
-      <div class="thumb-title">Logos</div>
-      <div class="thumb-desc">AI, SVG &amp; PNG versions of our cosmic logo.</div>
+      <div>Logos</div>
       <a href="logos.zip" download>Download</a>
     </div>
-
-    <!-- Icons -->
     <div class="thumb">
       <img src="icons.png" alt="Icons">
-      <div class="thumb-title">Icons</div>
-      <div class="thumb-desc">Pixel &amp; vector icons for UI, marketing, etc.</div>
+      <div>Icons</div>
       <a href="icons.zip" download>Download</a>
     </div>
-
-    <!-- Templates -->
     <div class="thumb">
       <img src="templates.png" alt="Templates">
-      <div class="thumb-title">Templates</div>
-      <div class="thumb-desc">Social, slide decks &amp; press-kit PDF templates.</div>
+      <div>Templates</div>
       <a href="templates.zip" download>Download</a>
     </div>
   </div>
-
 </body>
 </html>
