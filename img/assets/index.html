@@ -1,63 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Branding Assets — Buckazoids</title>
+  <meta charset="UTF-8">
+  <title>🔍 Preview Assets — Buckazoids</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- arcade pixel font -->
+  <!-- 1) Arcade pixel font + UI font -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sora:wght@400;600&display=swap"
     rel="stylesheet"
   />
 
   <style>
+    /* ─── VARIABLES & RESET ───────────────────────────────────────────────── */
     :root {
-      --neon:    #f77f00;
-      --glow:    rgba(247,127,0,0.8);
-      --bg:      #0a0c13;
-      --panel:   #1b2a3d;
-      --text:    #e0e0e0;
+      --neon: #f77f00;
+      --glow: rgba(247,127,0,0.8);
+      --bg: #0a0c13;
+      --panel: #1b2a3d;
+      --text: #e0e0e0;
     }
     * { margin:0; padding:0; box-sizing:border-box }
+
+    /* ─── BODY + CRT EFFECT ─────────────────────────────────────────────── */
     body {
-      font-family:'Press Start 2P',cursive;
+      font-family:'Sora',sans-serif;
       background:var(--bg);
       color:var(--text);
-      text-align:center;
       min-height:100vh;
+      text-align:center;
       padding:2rem 1rem;
+      position:relative;
+      overflow-x:hidden;
     }
-    .hero-title {
+    /* horizontal + vertical scanlines */
+    body::before {
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%);
+      z-index:-2;
+    }
+    /* soft vignette grid */
+    body::after {
+      content:'';
+      position:fixed; top:0; left:0; right:0; bottom:0;
+      background:repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 2px);
+      z-index:-1;
+    }
+
+    /* neon flicker animation */
+    @keyframes neon-flicker {
+      0%,19%,21%,23%,25%,54%,56%,100% { opacity:1 }
+      20%,24%,55%               { opacity:.4 }
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────────────────────── */
+    header {
+      margin-bottom:2rem;
+    }
+    header h1 {
+      font-family:'Press Start 2P',cursive;
       font-size:1.8rem;
       color:var(--neon);
-      text-shadow:0 0 4px var(--neon),0 0 8px var(--neon),0 0 16px var(--neon);
-      animation:flicker 3s infinite;
+      text-shadow:
+        0 0 4px var(--neon),
+        0 0 8px var(--neon),
+        0 0 16px var(--neon);
+      animation:neon-flicker 3s infinite;
     }
-    @keyframes flicker {
-      0%,19%,21%,23%,25%,54%,56%,100% { opacity:1 }
-      20%,24%,55% { opacity:.4 }
-    }
-    .hero-sub {
+    header p {
       margin-top:.5rem;
-      font-size:.9rem;
       color:rgba(255,255,255,.7);
     }
 
-    .download-preview {
-      margin:2rem auto;
+    /* ─── CARDS GRID ─────────────────────────────────────────────────────── */
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1.5rem;
+      max-width:960px;
+      margin:0 auto;
     }
-    .download-preview a {
+    .card {
+      background:var(--panel);
+      border:4px solid var(--neon);
+      border-radius:8px;
+      box-shadow:0 0 10px var(--glow);
+      transition:transform .2s,box-shadow .2s;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 0 20px var(--glow);
+    }
+    .card img {
+      width:100%;
+      height:120px;
+      object-fit:cover;
+    }
+    .card h3 {
+      font-family:'Press Start 2P',cursive;
+      font-size:.8rem;
+      color:var(--neon);
+      text-align:center;
+      padding:.75rem 0;
+      text-shadow:0 0 4px var(--neon);
+    }
+    .card p {
+      flex:1;
+      padding:0 .75rem 1rem;
+      font-size:.85rem;
+      color:rgba(224,224,224,.9);
+      text-align:center;
+    }
+    .card a {
+      margin:0 auto 1rem;
+      padding:.5rem 1rem;
+      font-family:'Press Start 2P',cursive;
+      font-size:.75rem;
+      background:var(--neon);
+      color:var(--bg);
+      border:none;
+      border-radius:4px;
+      box-shadow:0 0 8px var(--glow);
+      text-decoration:none;
+      transition:transform .1s,box-shadow .2s;
+    }
+    .card a:hover {
+      transform:scale(.95);
+      box-shadow:0 0 12px var(--glow);
+    }
+
+    /* ─── HOME BUTTON ────────────────────────────────────────────────────── */
+    .home {
+      margin-top:2rem;
       display:inline-block;
-      padding:.75rem 2rem;
+      font-family:'Press Start 2P',cursive;
+      padding:.5rem 1.5rem;
       background:var(--neon);
       color:var(--bg);
       text-decoration:none;
       box-shadow:0 0 10px var(--glow);
+      border-radius:4px;
       transition:transform .1s,box-shadow .2s;
-      font-size:.75rem;
     }
-    .download-preview a:hover {
+    .home:hover {
       transform:scale(.95);
       box-shadow:0 0 15px var(--glow);
     }
@@ -65,16 +156,42 @@
 </head>
 <body>
 
-  <div class="hero-title">BRANDING ASSETS</div>
-  <div class="hero-sub">Download logos, templates &amp; more for press &amp; community.</div>
+  <header>
+    <h1>🔍 Preview Assets</h1>
+    <p>Browse below or grab each ZIP directly →</p>
+  </header>
 
-  <div class="download-preview">
-    <a href="img/assets/index.html">👾 Preview Assets</a>
-  </div>
+  <section class="cards">
+    <div class="card">
+      <img src="hexmap.png" alt="Hex Map &amp; Fonts">
+      <h3>Hex Map &amp; Fonts</h3>
+      <p>This will have our hex map, and fonts.</p>
+      <a href="hexmap_fonts.zip" download>DOWNLOAD</a>
+    </div>
 
-  <a href="index.html" style="font-size:.65rem; color:rgba(255,255,255,.7); text-decoration:underline;">
-    ← Back to Home
-  </a>
+    <div class="card">
+      <img src="logos.png" alt="Logos">
+      <h3>Logos</h3>
+      <p>AI, SVG &amp; PNG versions of our cosmic logo.</p>
+      <a href="logos.zip" download>DOWNLOAD</a>
+    </div>
+
+    <div class="card">
+      <img src="icons.png" alt="Icons">
+      <h3>Icons</h3>
+      <p>Pixel &amp; vector icons for UI, marketing, etc.</p>
+      <a href="icons.zip" download>DOWNLOAD</a>
+    </div>
+
+    <div class="card">
+      <img src="templates.png" alt="Templates">
+      <h3>Templates</h3>
+      <p>Social, slide decks &amp; press-kit PDF templates.</p>
+      <a href="templates.zip" download>DOWNLOAD</a>
+    </div>
+  </section>
+
+  <a href="../index.html" class="home">← Back to Home</a>
 
 </body>
 </html>
