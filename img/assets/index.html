@@ -5,14 +5,10 @@
   <title>🔍 Preview Assets — Buckazoids</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 1) Arcade pixel font + UI font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sora:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
-    /* ─── VARIABLES & RESET ───────────────────────────────────────────────── */
     :root {
       --neon: #f77f00;
       --glow: rgba(247,127,0,0.8);
@@ -20,178 +16,207 @@
       --panel: #1b2a3d;
       --text: #e0e0e0;
     }
-    * { margin:0; padding:0; box-sizing:border-box }
 
-    /* ─── BODY + CRT EFFECT ─────────────────────────────────────────────── */
+    /* Reset + base */
+    * { margin:0; padding:0; box-sizing:border-box }
     body {
-      font-family:'Sora',sans-serif;
-      background:var(--bg);
-      color:var(--text);
+      font-family: 'Press Start 2P', cursive;
+      background: var(--bg);
+      color: var(--text);
       min-height:100vh;
+      overflow-x:hidden;
       text-align:center;
       padding:2rem 1rem;
-      position:relative;
-      overflow-x:hidden;
     }
-    /* horizontal + vertical scanlines */
+
+    /* CRT scanlines */
     body::before {
-      content:'';
-      position:fixed; top:0; left:0; right:0; bottom:0;
+      content:""; position:fixed; inset:0;
       background:
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 100%);
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 2px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 2px);
       z-index:-2;
     }
-    /* soft vignette grid */
     body::after {
-      content:'';
-      position:fixed; top:0; left:0; right:0; bottom:0;
-      background:repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 2px);
+      content:""; position:fixed; inset:0;
+      background: repeating-linear-gradient(rgba(0,0,0,0.05) 0 1px, transparent 1px 3px);
       z-index:-1;
     }
 
-    /* neon flicker animation */
     @keyframes neon-flicker {
-      0%,19%,21%,23%,25%,54%,56%,100% { opacity:1 }
-      20%,24%,55%               { opacity:.4 }
+      0%,18%,20%,22%,24%,54%,56%,100% { opacity:1 }
+      19%,23%,55% { opacity:.4 }
     }
 
-    /* ─── HEADER ─────────────────────────────────────────────────────────── */
+    /* drifting squares background */
+    .floaters {
+      pointer-events:none;
+      position:absolute; inset:0;
+      overflow:hidden; z-index:-3;
+    }
+    .floaters div {
+      position:absolute;
+      width:8px; height:8px;
+      background: var(--neon);
+      opacity:.2;
+      animation: drift 10s linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translate3d(var(--x),var(--y),0) scale(0); }
+      50% { opacity:.5; }
+      100% { transform: translate3d(calc(var(--x) + var(--dx)), calc(var(--y)+var(--dy)),0) scale(1); opacity:0; }
+    }
+
     header {
       margin-bottom:2rem;
     }
     header h1 {
-      font-family:'Press Start 2P',cursive;
-      font-size:1.8rem;
-      color:var(--neon);
+      font-size:1.5rem;
+      color: var(--neon);
       text-shadow:
         0 0 4px var(--neon),
         0 0 8px var(--neon),
         0 0 16px var(--neon);
-      animation:neon-flicker 3s infinite;
+      animation: neon-flicker 3s infinite;
     }
     header p {
       margin-top:.5rem;
-      color:rgba(255,255,255,.7);
+      font-size:.8rem;
+      color: rgba(224,224,224, .7);
     }
 
-    /* ─── CARDS GRID ─────────────────────────────────────────────────────── */
-    .cards {
+    /* home button */
+    .home-btn {
+      display:inline-block;
+      margin:1rem auto 2rem;
+      padding:.75rem 1.5rem;
+      background: var(--neon);
+      color: var(--bg);
+      text-decoration:none;
+      border-radius:4px;
+      box-shadow: 0 0 8px var(--glow);
+      transition: transform .1s, box-shadow .2s;
+      font-family:'Press Start 2P';
+      font-size:.7rem;
+    }
+    .home-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px var(--glow);
+    }
+
+    /* cards grid */
+    .thumbs {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
       gap:1.5rem;
-      max-width:960px;
-      margin:0 auto;
-    }
-    .card {
-      background:var(--panel);
-      border:4px solid var(--neon);
-      border-radius:8px;
-      box-shadow:0 0 10px var(--glow);
-      transition:transform .2s,box-shadow .2s;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-    .card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 0 20px var(--glow);
-    }
-    .card img {
-      width:100%;
-      height:120px;
-      object-fit:cover;
-    }
-    .card h3 {
-      font-family:'Press Start 2P',cursive;
-      font-size:.8rem;
-      color:var(--neon);
-      text-align:center;
-      padding:.75rem 0;
-      text-shadow:0 0 4px var(--neon);
-    }
-    .card p {
-      flex:1;
-      padding:0 .75rem 1rem;
-      font-size:.85rem;
-      color:rgba(224,224,224,.9);
-      text-align:center;
-    }
-    .card a {
-      margin:0 auto 1rem;
-      padding:.5rem 1rem;
-      font-family:'Press Start 2P',cursive;
-      font-size:.75rem;
-      background:var(--neon);
-      color:var(--bg);
-      border:none;
-      border-radius:4px;
-      box-shadow:0 0 8px var(--glow);
-      text-decoration:none;
-      transition:transform .1s,box-shadow .2s;
-    }
-    .card a:hover {
-      transform:scale(.95);
-      box-shadow:0 0 12px var(--glow);
+      max-width:900px;
+      margin:0 auto 3rem;
     }
 
-    /* ─── HOME BUTTON ────────────────────────────────────────────────────── */
-    .home {
-      margin-top:2rem;
-      display:inline-block;
-      font-family:'Press Start 2P',cursive;
-      padding:.5rem 1.5rem;
-      background:var(--neon);
-      color:var(--bg);
-      text-decoration:none;
+    .thumb {
+      position:relative;
+      background: var(--panel);
+      border:3px solid var(--neon);
+      border-radius:8px;
+      padding:1rem;
       box-shadow:0 0 10px var(--glow);
-      border-radius:4px;
-      transition:transform .1s,box-shadow .2s;
+      transition: transform .2s, box-shadow .2s;
     }
-    .home:hover {
-      transform:scale(.95);
-      box-shadow:0 0 15px var(--glow);
+    .thumb:hover {
+      transform: translateY(-5px);
+      box-shadow:0 0 20px var(--glow);
+    }
+    .thumb img {
+      width:100%; height:120px;
+      object-fit:cover;
+      border-radius:4px;
+      margin-bottom:.75rem;
+    }
+    .thumb-title {
+      color: var(--neon);
+      font-size:.75rem;
+      margin-bottom:.5rem;
+      text-shadow: 0 0 4px var(--neon);
+    }
+    .thumb-desc {
+      font-size:.65rem;
+      margin-bottom:1rem;
+      color: rgba(224,224,224,.8);
+    }
+    .thumb a {
+      display:inline-block;
+      padding:.5rem 1rem;
+      background:var(--neon);
+      color: var(--bg);
+      text-decoration:none;
+      border-radius:4px;
+      box-shadow:0 0 8px var(--glow);
+      font-size:.65rem;
+      transition: transform .1s, box-shadow .2s;
+    }
+    .thumb a:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 16px var(--glow);
     }
   </style>
 </head>
 <body>
 
+  <!-- floating squares -->
+  <div class="floaters">
+    <!-- generate 30 squares with random CSS vars -->
+    <script>
+      for(let i=0;i<30;i++){
+        const d= document.createElement('div');
+        const x = Math.random()*100+'vw';
+        const y = Math.random()*100+'vh';
+        const dx= (Math.random()*200-100)+'vw';
+        const dy= (Math.random()*200-100)+'vh';
+        d.style.setProperty('--x', x);
+        d.style.setProperty('--y', y);
+        d.style.setProperty('--dx', dx);
+        d.style.setProperty('--dy', dy);
+        d.style.animationDelay = (Math.random()*-10)+'s';
+        document.body.appendChild(d);
+      }
+    </script>
+  </div>
+
   <header>
     <h1>🔍 Preview Assets</h1>
-    <p>Browse below or grab each ZIP directly →</p>
+    <p>Press START → download your gear</p>
   </header>
 
-  <section class="cards">
-    <div class="card">
-      <img src="hexmap.png" alt="Hex Map &amp; Fonts">
-      <h3>Hex Map &amp; Fonts</h3>
-      <p>This will have our hex map, and fonts.</p>
+  <a href="../index.html" class="home-btn">← BACK TO HOME</a>
+
+  <div class="thumbs">
+    <div class="thumb">
+      <img src="hexmap.png" alt="Hex Map & Fonts">
+      <div class="thumb-title">HEX MAP & FONTS</div>
+      <div class="thumb-desc">Our full hex-map & web/OFF-OTF font set</div>
       <a href="hexmap_fonts.zip" download>DOWNLOAD</a>
     </div>
 
-    <div class="card">
+    <div class="thumb">
       <img src="logos.png" alt="Logos">
-      <h3>Logos</h3>
-      <p>AI, SVG &amp; PNG versions of our cosmic logo.</p>
+      <div class="thumb-title">LOGOS</div>
+      <div class="thumb-desc">AI, SVG & PNG versions of our Buckazoids logo</div>
       <a href="logos.zip" download>DOWNLOAD</a>
     </div>
 
-    <div class="card">
+    <div class="thumb">
       <img src="icons.png" alt="Icons">
-      <h3>Icons</h3>
-      <p>Pixel &amp; vector icons for UI, marketing, etc.</p>
+      <div class="thumb-title">ICONS</div>
+      <div class="thumb-desc">Pixel & vector icons for UI, social, merch, etc.</div>
       <a href="icons.zip" download>DOWNLOAD</a>
     </div>
 
-    <div class="card">
+    <div class="thumb">
       <img src="templates.png" alt="Templates">
-      <h3>Templates</h3>
-      <p>Social, slide decks &amp; press-kit PDF templates.</p>
+      <div class="thumb-title">TEMPLATES</div>
+      <div class="thumb-desc">Press-kit PDFs, social graphics & slide decks</div>
       <a href="templates.zip" download>DOWNLOAD</a>
     </div>
-  </section>
-
-  <a href="../index.html" class="home">← Back to Home</a>
-
+  </div>
 </body>
 </html>
