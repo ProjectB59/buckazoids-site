@@ -1,87 +1,105 @@
- <!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buckazoids</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #151b1d;
-      font-family: 'Orbitron', sans-serif;
+      background-color: #0d1113;
+      font-family: 'Sora', sans-serif;
       color: #fff3e2;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
-.logo {
-  width: 180px;
-  margin-bottom: 0.5rem;
-}
 
-.tagline {
-  color: #999;
-  font-size: 0.9rem;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
+    img.logo {
+      width: 180px;
+      max-width: 90%;
+      margin-bottom: 0.5rem;
+    }
 
-h1 {
-  font-size: 3.5rem;
-  color: #fff3e2;
-  text-shadow: 0 0 20px #f77f00, 0 0 40px #f77f00;
-  margin-bottom: 1rem;
-}
+    .tagline {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 2rem;
+    }
 
-p.subtitle {
-  font-size: 1.2rem;
-  color: #fff3e2;
-  margin-bottom: 2rem;
-}
+    h1 {
+      font-size: 3.5rem;
+      color: #fff3e2;
+      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+      margin-bottom: 1rem;
+      animation: glow 2s infinite alternate;
+    }
 
-.buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
+      }
+      100% {
+        text-shadow: 0 0 20px #f77f00, 0 0 35px #f77f00;
+      }
+    }
 
-.buttons a {
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  background-color: #f77f00;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #151b1d;
-  box-shadow: 0 0 10px #f77f00, 0 0 20px #feb73f;
-  transition: transform 0.2s ease;
-}
+    .subtitle {
+      font-size: 1.1rem;
+      color: #eee;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.4;
+    }
 
-.buttons a:hover {
-  transform: scale(1.05);
-  background-color: #feb73f;
-  box-shadow: 0 0 15px #feb73f, 0 0 30px #f77f00;
-}
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-}
+    .buttons a {
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      background-color: #f77f00;
+      border-radius: 8px;
+      font-weight: 700;
+      color: #151b1d;
+      box-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
+      transition: all 0.3s ease;
+    }
 
-  </style></head>
+    .buttons a:hover {
+      background-color: #feb73f;
+      box-shadow: 0 0 15px #feb73f, 0 0 30px #feb73f;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .buttons a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
 <body>
-  <!-- Project B59 Logo -->
-  <img src="ProjectB59_logo_crisp.png" alt="Project B59 Logo" class="logo" />
 
-  <!-- Tagline -->
+  <!-- Logo -->
+  <img src="img/ProjectB59_logo_crisp.png" alt="Project B59 Logo" class="logo" />
   <p class="tagline">A Project B59 Research Initiative</p>
 
-  <!-- Main Title -->
+  <!-- Main Heading -->
   <h1>Buckazoids</h1>
   <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
 
@@ -91,6 +109,6 @@ p.subtitle {
     <a href="financials.html">Financials</a>
     <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
   </div>
+
 </body>
 </html>
-
