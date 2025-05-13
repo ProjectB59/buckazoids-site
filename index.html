@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0d1113;
+      background-color: #151b1d;
       font-family: 'Orbitron', sans-serif;
       color: #fff3e2;
       display: flex;
@@ -19,85 +18,79 @@
       height: 100vh;
       text-align: center;
     }
+.logo {
+  width: 180px;
+  margin-bottom: 0.5rem;
+}
 
-    .logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+.tagline {
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
 
-    .logo {
-      width: 200px;
-      margin-bottom: 0.5rem;
-      filter: drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) brightness(1.2);
-      animation: neon-flicker 1.5s infinite alternate;
-    }
+h1 {
+  font-size: 3.5rem;
+  color: #fff3e2;
+  text-shadow: 0 0 20px #f77f00, 0 0 40px #f77f00;
+  margin-bottom: 1rem;
+}
 
-    @keyframes neon-flicker {
-      0% {
-        filter: drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) brightness(1.2);
-      }
-      100% {
-        filter: drop-shadow(0 0 15px #00ffcc) drop-shadow(0 0 30px #00ffcc) brightness(1.5);
-      }
-    }
+p.subtitle {
+  font-size: 1.2rem;
+  color: #fff3e2;
+  margin-bottom: 2rem;
+}
 
-    .tagline {
-      color: #00ffcc;
-      font-size: 0.9rem;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-    }
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    h1 {
-      font-size: 3.5rem;
-      color: #fff3e2;
-      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
-      margin-bottom: 1rem;
-      animation: glow-orange 1.5s infinite alternate;
-    }
+.buttons a {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: #f77f00;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #151b1d;
+  box-shadow: 0 0 10px #f77f00, 0 0 20px #feb73f;
+  transition: transform 0.2s ease;
+}
 
-    @keyframes glow-orange {
-      0% {
-        text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
-      }
-      100% {
-        text-shadow: 0 0 15px #f77f00, 0 0 30px #f77f00, 0 0 40px #f77f00;
-      }
-    }
+.buttons a:hover {
+  transform: scale(1.05);
+  background-color: #feb73f;
+  box-shadow: 0 0 15px #feb73f, 0 0 30px #f77f00;
+}
 
-    p.subtitle {
-      font-size: 1.2rem;
-      color: #fff3e2;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-    }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
 
-    .buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+  </style></head>
+<body>
+  <!-- Project B59 Logo -->
+  <img src="ProjectB59_logo_crisp.png" alt="Project B59 Logo" class="logo" />
 
-    .buttons a {
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      background-color: transparent;
-      border: 2px solid #f77f00;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #f77f00;
-      text-shadow: 0 0 5px #f77f00;
-      box-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
-      transition: all 0.3s ease;
-    }
+  <!-- Tagline -->
+  <p class="tagline">A Project B59 Research Initiative</p>
 
-    .buttons a:hover {
-      transform: scale(1.05);
-      color: #fff3e2;
-      border-color: #feb73f;
-      text-shadow: 0 0 10px #feb73f;
-      box-shadow: 0 0 15px #feb73f, 0 0 30px #
+  <!-- Main Title -->
+  <h1>Buckazoids</h1>
+  <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <a href="press-kit.html">Media Kit</a>
+    <a href="financials.html">Financials</a>
+    <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
+  </div>
+</body>
+</html>
+
