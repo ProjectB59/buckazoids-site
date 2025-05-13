@@ -27,80 +27,19 @@
       margin-bottom: 1rem;
     }
 
-    .project-b59 {
-      font-size: 2.5rem;
-      color: #fff3e2;
-      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
-      animation: glow-orange 1.5s infinite alternate;
-      position: relative;
+    .logo {
+      width: 200px;
       margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) brightness(1.2);
+      animation: neon-flicker 1.5s infinite alternate;
     }
 
-    .project-b59::after {
-      content: '🚀';
-      font-size: 1.2rem;
-      position: absolute;
-      top: -10px;
-      right: -30px;
-      text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
-      animation: glow-pink 1.5s infinite alternate;
-    }
-
-    @keyframes glow-orange {
+    @keyframes neon-flicker {
       0% {
-        text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+        filter: drop-shadow(0 0 10px #00ffcc) drop-shadow(0 0 20px #00ffcc) brightness(1.2);
       }
       100% {
-        text-shadow: 0 0 15px #f77f00, 0 0 30px #f77f00, 0 0 40px #f77f00;
-      }
-    }
-
-    @keyframes glow-pink {
-      0% {
-        text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
-      }
-      100% {
-        text-shadow: 0 0 15px #ff43b9, 0 0 30px #ff43b9, 0 0 40px #ff43b9;
-      }
-    }
-
-    .additional-logos {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .additional-logos h2 {
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .orbit {
-      color: #fff3e2;
-      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
-      animation: glow-orange 1.5s infinite alternate;
-    }
-
-    .inter {
-      color: #fff3e2;
-      text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
-      animation: glow-pink 1.5s infinite alternate;
-    }
-
-    .cardo {
-      color: #fff3e2;
-      text-shadow: 0 0 10px #02314d, 0 0 20px #02314d, 0 0 30px #02314d;
-      animation: glow-teal 1.5s infinite alternate;
-    }
-
-    @keyframes glow-teal {
-      0% {
-        text-shadow: 0 0 10px #02314d, 0 0 20px #02314d, 0 0 30px #02314d;
-      }
-      100% {
-        text-shadow: 0 0 15px #02314d, 0 0 30px #02314d, 0 0 40px #02314d;
+        filter: drop-shadow(0 0 15px #00ffcc) drop-shadow(0 0 30px #00ffcc) brightness(1.5);
       }
     }
 
@@ -118,6 +57,15 @@
       text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
       margin-bottom: 1rem;
       animation: glow-orange 1.5s infinite alternate;
+    }
+
+    @keyframes glow-orange {
+      0% {
+        text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+      }
+      100% {
+        text-shadow: 0 0 15px #f77f00, 0 0 30px #f77f00, 0 0 40px #f77f00;
+      }
     }
 
     p.subtitle {
@@ -152,16 +100,4 @@
       color: #fff3e2;
       border-color: #feb73f;
       text-shadow: 0 0 10px #feb73f;
-      box-shadow: 0 0 15px #feb73f, 0 0 30px #feb73f;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .project-b59 {
-        font-size: 2rem;
-      }
-
-      .project-b59
+      box-shadow: 0 0 15px #feb73f, 0 0 30px #
