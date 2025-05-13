@@ -9,7 +9,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #151b1d;
+      background-color: #0d1113;
       font-family: 'Orbitron', sans-serif;
       color: #fff3e2;
       display: flex;
@@ -20,17 +20,111 @@
       text-align: center;
     }
 
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .project-b59 {
+      font-size: 2.5rem;
+      color: #fff3e2;
+      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+      animation: glow-orange 1.5s infinite alternate;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-b59::after {
+      content: '🚀';
+      font-size: 1.2rem;
+      position: absolute;
+      top: -10px;
+      right: -30px;
+      text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
+      animation: glow-pink 1.5s infinite alternate;
+    }
+
+    @keyframes glow-orange {
+      0% {
+        text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+      }
+      100% {
+        text-shadow: 0 0 15px #f77f00, 0 0 30px #f77f00, 0 0 40px #f77f00;
+      }
+    }
+
+    @keyframes glow-pink {
+      0% {
+        text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
+      }
+      100% {
+        text-shadow: 0 0 15px #ff43b9, 0 0 30px #ff43b9, 0 0 40px #ff43b9;
+      }
+    }
+
+    .additional-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .additional-logos h2 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .orbit {
+      color: #fff3e2;
+      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
+      animation: glow-orange 1.5s infinite alternate;
+    }
+
+    .inter {
+      color: #fff3e2;
+      text-shadow: 0 0 10px #ff43b9, 0 0 20px #ff43b9, 0 0 30px #ff43b9;
+      animation: glow-pink 1.5s infinite alternate;
+    }
+
+    .cardo {
+      color: #fff3e2;
+      text-shadow: 0 0 10px #02314d, 0 0 20px #02314d, 0 0 30px #02314d;
+      animation: glow-teal 1.5s infinite alternate;
+    }
+
+    @keyframes glow-teal {
+      0% {
+        text-shadow: 0 0 10px #02314d, 0 0 20px #02314d, 0 0 30px #02314d;
+      }
+      100% {
+        text-shadow: 0 0 15px #02314d, 0 0 30px #02314d, 0 0 40px #02314d;
+      }
+    }
+
+    .tagline {
+      color: #00ffcc;
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    }
+
     h1 {
       font-size: 3.5rem;
       color: #fff3e2;
-      text-shadow: 0 0 20px #f77f00, 0 0 40px #f77f00;
+      text-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00, 0 0 30px #f77f00;
       margin-bottom: 1rem;
+      animation: glow-orange 1.5s infinite alternate;
     }
 
     p.subtitle {
       font-size: 1.2rem;
       color: #fff3e2;
       margin-bottom: 2rem;
+      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
     }
 
     .buttons {
@@ -43,35 +137,31 @@
     .buttons a {
       text-decoration: none;
       padding: 0.75rem 1.5rem;
-      background-color: #f77f00;
+      background-color: transparent;
+      border: 2px solid #f77f00;
       border-radius: 8px;
       font-weight: bold;
-      color: #151b1d;
-      box-shadow: 0 0 10px #f77f00, 0 0 20px #feb73f;
-      transition: transform 0.2s ease;
+      color: #f77f00;
+      text-shadow: 0 0 5px #f77f00;
+      box-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
+      transition: all 0.3s ease;
     }
 
     .buttons a:hover {
       transform: scale(1.05);
-      background-color: #feb73f;
-      box-shadow: 0 0 15px #feb73f, 0 0 30px #f77f00;
+      color: #fff3e2;
+      border-color: #feb73f;
+      text-shadow: 0 0 10px #feb73f;
+      box-shadow: 0 0 15px #feb73f, 0 0 30px #feb73f;
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
       }
-    }
-  </style>
-</head>
-<body>
-  <h1>Buckazoids</h1>
-  <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
 
-  <div class="buttons">
-    <a href="press-kit.html">Media Kit</a>
-    <a href="financials.html">Financials</a>
-    <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
-  </div>
-</body>
-</html>
+      .project-b59 {
+        font-size: 2rem;
+      }
+
+      .project-b59
