@@ -1,15 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buckazoids Meme Gallery</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== Global Reset ===== */
     * { margin:0; padding:0; box-sizing:border-box }
     body {
       font-family: 'Sora', sans-serif;
@@ -17,8 +13,6 @@
       color: #fff3e2;
     }
     a { text-decoration:none; color:inherit }
-
-    /* ===== Header / Nav ===== */
     .header {
       background: #0f1315;
       padding: 20px;
@@ -40,8 +34,6 @@
       color: #feb73f;
       border-color: #feb73f;
     }
-
-    /* ===== Page Container ===== */
     .container {
       max-width: 1400px;
       margin: 40px auto;
@@ -53,16 +45,12 @@
       margin-bottom: 40px;
       font-weight: 700;
     }
-
-    /* ===== Gallery Grid ===== */
     .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
       gap: 30px;
       justify-content: center;
     }
-
-    /* ===== Meme Card ===== */
     .meme-card {
       display: flex;
       flex-direction: column;
@@ -88,8 +76,6 @@
       text-align: center;
       font-weight: 600;
     }
-
-    /* ===== View & Download Buttons ===== */
     .action-btn {
       display: block;
       width: 120px;
@@ -111,139 +97,130 @@
   </style>
 </head>
 <body>
-
-  <!-- Header / Nav -->
   <div class="header">
     <nav>
       <a href="index.html" class="nav-button">Home</a>
       <a href="buckazoids-meme-gallery.html" class="nav-button active">Meme Gallery</a>
-      <a href="https://buckazoids-bitcoin-echo.lovable.app/about"
-         class="nav-button" target="_blank" rel="noopener">Lore</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" class="nav-button" target="_blank" rel="noopener">Lore</a>
       <a href="press-kit.html" class="nav-button">Press Kit</a>
     </nav>
   </div>
 
-  <!-- Main Content -->
   <div class="container">
     <h1>Buckazoids Meme Gallery</h1>
     <div class="gallery-container">
-      <!-- cards will be injected here by JavaScript -->
     </div>
   </div>
 
   <script>
-    // List _all_ of your meme files + display titles here:
     const memes = [
-      { file:"COD.jpg",               title:"Cod" },
-      { file:"alice.jpg",             title:"Alice" },
-      { file:"alien.jpg",             title:"Alien" },
-      { file:"alwayswere.jpg",        title:"Always Were" },
-      { file:"astro.jpg",             title:"Astro" },
-      { file:"backtothefuture.jpg",   title:"Back to the Future" },
+      { file:"alien.jpg", title:"Alien" },
+      { file:"alice.jpg", title:"Alice" },
+      { file:"alone.jpg", title:"Alone" },
+      { file:"alwayswere.jpg", title:"Always Were" },
+      { file:"astro.jpg", title:"Astro" },
+      { file:"backtothefuture.jpg", title:"Back to the Future" },
+      { file:"Bailout.jpg", title:"Bailout" },
       { file:"bewarecounterfitters.jpg", title:"Beware Counterfitters" },
-      { file:"breakingbad.jpg",       title:"Breaking Bad" },
-      { file:"buckalisa.jpg",         title:"Buckalisa" },
-      { file:"buckazoid.png",         title:"Buckazoid" },
-      { file:"cabal.jpg",             title:"Cabal" },
-      { file:"cabal2.jpg",            title:"Cabal2" },
-      { file:"cityofthefuture.jpg",   title:"City of the Future" },
-      { file:"cmc.jpg",               title:"CMC" },
-      { file:"conspiracy.jpg",        title:"Conspiracy" },
-      { file:"cybertruck.jpg",        title:"Cybertruck" },
-      { file:"doge.jpg",              title:"Doge" },
-      { file:"drevil.jpg",            title:"Drevil" },
-      { file:"elov.jpg",              title:"Elon" },
-      { file:"escapefromny.jpg",      title:"Escape from NY" },
-      { file:"fallout.jpg",           title:"Fallout" },
-      { file:"falloutvegas.jpg",      title:"Fallout Vegas" },
-      { file:"fart.jpg",              title:"Fart" },
-      { file:"fearandloathing.jpg",   title:"Fear and Loathing" },
-      { file:"formom.jpg",            title:"For Mom" },
-      { file:"fortnite.jpg",          title:"Fortnite" },
-      { file:"fortnitecrew.jpg",      title:"Fortnite Crew" },
-      { file:"fortnitepapa.jpg",      title:"Fortnite Papa" },
-      { file:"fortniteroger.jpg",     title:"Fortnite Roger" },
-      { file:"fortune.jpg",           title:"Fortune" },
-      { file:"foxy.jpg",              title:"Foxy" },
-      { file:"gametheory.jpg",        title:"Game Theory" },
-      { file:"gandalf.jpg",           title:"Gandalf" },
-      { file:"gandalf2.jpg",          title:"Gandalf 2" },
-      { file:"gandalf3.jpg",          title:"Gandalf 3" },
-      { file:"gmgangday.jpg",         title:"GM Gang Day" },
-      { file:"gmgangnight.jpg",       title:"GM Gang Night" },
-      { file:"godfather.jpg",         title:"Godfather" },
-      { file:"goonies.jpg",           title:"Goonies" },
-      { file:"gooniesposter.jpg",     title:"Goonies Poster" },
-      { file:"inawepepe.jpg",         title:"In Awe Pepe" },
-      { file:"lakers.jpg",            title:"Lakers" },
-      { file:"lambo.jpg",             title:"Lambo" },
-      { file:"makeacall.jpg",         title:"Make a Call" },
-      { file:"manoftheyear.jpg",      title:"Man of the Year" },
-      { file:"marilyn.jpg",           title:"Marilyn" },
-      { file:"mcmahon.jpg",           title:"McMahon" },
-      { file:"memeofbitcoin.jpg",     title:"Meme of Bitcoin" },
-      { file:"minecraft.png",         title:"Minecraft" },
-      { file:"miow.jpg",              title:"Miow" },
-      { file:"mona.jpg",              title:"Mona" },
-      { file:"multipass.jpg",         title:"Multipass" },
-      { file:"onair.jpg",             title:"On Air" },
-      { file:"origins.jpg",           title:"Origins" },
-      { file:"papabuck.jpg",          title:"Papa Buck" },
-      { file:"papachina.jpg",         title:"Papa China" },
-      { file:"papaedition.jpg",       title:"Papa Edition" },
-      { file:"pepe.jpg",              title:"Pepe" },
-      { file:"pepepharao.jpg",        title:"Pepe Pharao" },
-      { file:"plushies.jpg",          title:"Plushies" },
-      { file:"pope.jpg",              title:"Pope" },
-      { file:"pope1.jpg",             title:"Pope 1" },
-      { file:"poseidon.jpg",          title:"Poseidon" },
-      { file:"pressplay.jpg",         title:"Press Play" },
-      { file:"projectb59.jpg",        title:"Project B59" },
-      { file:"pulpfiction.jpg",       title:"Pulp Fiction" },
-      { file:"pulpmag.jpg",           title:"Pulp Mag" },
-      { file:"realroger.jpg",         title:"Real Roger" },
-      { file:"rogerfly.jpg",          title:"Roger Fly" },
-      { file:"ronaldo.jpg",           title:"Ronaldo" },
-      { file:"satoshibd.jpg",         title:"Satoshi BD" },
-      { file:"saylor.jpg",            title:"Saylor" },
-      { file:"scotty.png",            title:"Scotty" },
-      { file:"severance.jpg",         title:"Severance" },
-      { file:"sq7.jpg",               title:"SQ7" },
-      { file:"theblueprint.png",      title:"The Blueprint" },
-      { file:"theylive.jpg",          title:"They Live" },
-      { file:"tobey.jpg",             title:"Tobey" },
-      { file:"topsecret.jpg",         title:"Top Secret" },
-      { file:"tron.jpg",              title:"Tron" },
-      { file:"trump.jpg",             title:"Trump" },
-      { file:"trumpgamer.jpg",        title:"Trump Gamer" },
-      { file:"vhs80.jpg",             title:"VHS80" },
-      { file:"wecandoit.jpg",         title:"We Can Do It" },
-      { file:"wen.jpg",               title:"Wen" },
-      { file:"wob.jpg",               title:"Wob" },
-      { file:"would.jpg",             title:"Would" },
-      { file:"wow.jpg",               title:"Wow" },
-      { file:"zeus.jpg",              title:"Zeus" },
-
-      // ← your 14 new ones (no duplication!)
-      { file:"alone.jpg",        title:"Alone"           },
-      { file:"Bailout.jpg",      title:"Bailout"         },
-      { file:"coded.jpg",        title:"Coded"           },
-      { file:"coincidence.jpg",  title:"Coincidence"     },
-      { file:"dyor.jpg",         title:"DYOR"            },
-      { file:"educate.jpg",      title:"Educate"         },
-      { file:"everything.jpg",   title:"Everything"      },
-      { file:"gettowork.jpg",    title:"Get to Work"     },
-      { file:"hodl.jpg",         title:"HODL"            },
-      { file:"JustinCase.jpg",   title:"Justin Case"     },
-      { file:"roger.jpg",        title:"Roger"           },
-      { file:"rogerwilco.jpg",   title:"Roger Wilco"     },
-      { file:"satoshi.jpg",      title:"Satoshi"         },
-      { file:"thebeginning.jpg", title:"The Beginning"   }
+      { file:"breakingbad.jpg", title:"Breaking Bad" },
+      { file:"buckalisa.jpg", title:"Buckalisa" },
+      { file:"buckazoid.png", title:"Buckazoid" },
+      { file:"cabal.jpg", title:"Cabal" },
+      { file:"cabal2.jpg", title:"Cabal2" },
+      { file:"cityofthefuture.jpg", title:"City of the Future" },
+      { file:"cmc.jpg", title:"CMC" },
+      { file:"coded.jpg", title:"Coded" },
+      { file:"COD.jpg", title:"Cod" },
+      { file:"coincidence.jpg", title:"Coincidence" },
+      { file:"conspiracy.jpg", title:"Conspiracy" },
+      { file:"cybertruck.jpg", title:"Cybertruck" },
+      { file:"doge.jpg", title:"Doge" },
+      { file:"drevil.jpg", title:"Drevil" },
+      { file:"dyor.jpg", title:"DYOR" },
+      { file:"educate.jpg", title:"Educate" },
+      { file:"elov.jpg", title:"Elon" },
+      { file:"escapefromny.jpg", title:"Escape from NY" },
+      { file:"everything.jpg", title:"Everything" },
+      { file:"fallout.jpg", title:"Fallout" },
+      { file:"falloutvegas.jpg", title:"Fallout Vegas" },
+      { file:"fart.jpg", title:"Fart" },
+      { file:"fearandloathing.jpg", title:"Fear and Loathing" },
+      { file:"formom.jpg", title:"For Mom" },
+      { file:"fortnite.jpg", title:"Fortnite" },
+      { file:"fortnitecrew.jpg", title:"Fortnite Crew" },
+      { file:"fortnitepapa.jpg", title:"Fortnite Papa" },
+      { file:"fortniteroger.jpg", title:"Fortnite Roger" },
+      { file:"fortune.jpg", title:"Fortune" },
+      { file:"foxy.jpg", title:"Foxy" },
+      { file:"gametheory.jpg", title:"Game Theory" },
+      { file:"gandalf.jpg", title:"Gandalf" },
+      { file:"gandalf2.jpg", title:"Gandalf 2" },
+      { file:"gandalf3.jpg", title:"Gandalf 3" },
+      { file:"gettowork.jpg", title:"Get to Work" },
+      { file:"gmgangday.jpg", title:"GM Gang Day" },
+      { file:"gmgangnight.jpg", title:"GM Gang Night" },
+      { file:"godfather.jpg", title:"Godfather" },
+      { file:"goonies.jpg", title:"Goonies" },
+      { file:"gooniesposter.jpg", title:"Goonies Poster" },
+      { file:"hodl.jpg", title:"HODL" },
+      { file:"inawepepe.jpg", title:"In Awe Pepe" },
+      { file:"JustinCase.jpg", title:"Justin Case" },
+      { file:"lakers.jpg", title:"Lakers" },
+      { file:"lambo.jpg", title:"Lambo" },
+      { file:"makeacall.jpg", title:"Make a Call" },
+      { file:"manoftheyear.jpg", title:"Man of the Year" },
+      { file:"marilyn.jpg", title:"Marilyn" },
+      { file:"mcmahon.jpg", title:"McMahon" },
+      { file:"memeofbitcoin.jpg", title:"Meme of Bitcoin" },
+      { file:"minecraft.png", title:"Minecraft" },
+      { file:"miow.jpg", title:"Miow" },
+      { file:"mona.jpg", title:"Mona" },
+      { file:"multipass.jpg", title:"Multipass" },
+      { file:"onair.jpg", title:"On Air" },
+      { file:"origins.jpg", title:"Origins" },
+      { file:"papabuck.jpg", title:"Papa Buck" },
+      { file:"papachina.jpg", title:"Papa China" },
+      { file:"papaedition.jpg", title:"Papa Edition" },
+      { file:"pepe.jpg", title:"Pepe" },
+      { file:"pepepharao.jpg", title:"Pepe Pharao" },
+      { file:"plushies.jpg", title:"Plushies" },
+      { file:"pope.jpg", title:"Pope" },
+      { file:"pope1.jpg", title:"Pope 1" },
+      { file:"poseidon.jpg", title:"Poseidon" },
+      { file:"pressplay.jpg", title:"Press Play" },
+      { file:"projectb59.jpg", title:"Project B59" },
+      { file:"pulpfiction.jpg", title:"Pulp Fiction" },
+      { file:"pulpmag.jpg", title:"Pulp Mag" },
+      { file:"realroger.jpg", title:"Real Roger" },
+      { file:"roger.jpg", title:"Roger" },
+      { file:"rogerfly.jpg", title:"Roger Fly" },
+      { file:"rogerwilco.jpg", title:"Roger Wilco" },
+      { file:"ronaldo.jpg", title:"Ronaldo" },
+      { file:"satoshi.jpg", title:"Satoshi" },
+      { file:"satoshibd.jpg", title:"Satoshi BD" },
+      { file:"saylor.jpg", title:"Saylor" },
+      { file:"scotty.png", title:"Scotty" },
+      { file:"severance.jpg", title:"Severance" },
+      { file:"sq7.jpg", title:"SQ7" },
+      { file:"thebeginning.jpg", title:"The Beginning" },
+      { file:"theblueprint.png", title:"The Blueprint" },
+      { file:"theylive.jpg", title:"They Live" },
+      { file:"tobey.jpg", title:"Tobey" },
+      { file:"topsecret.jpg", title:"Top Secret" },
+      { file:"tron.jpg", title:"Tron" },
+      { file:"trump.jpg", title:"Trump" },
+      { file:"trumpgamer.jpg", title:"Trump Gamer" },
+      { file:"vhs80.jpg", title:"VHS80" },
+      { file:"wecandoit.jpg", title:"We Can Do It" },
+      { file:"wen.jpg", title:"Wen" },
+      { file:"wob.jpg", title:"Wob" },
+      { file:"would.jpg", title:"Would" },
+      { file:"wow.jpg", title:"Wow" },
+      { file:"zeus.jpg", title:"Zeus" }
     ];
 
     const gallery = document.querySelector('.gallery-container');
     memes.forEach(m => {
-      // build card
       const card = document.createElement('div');
       card.className = 'meme-card';
 
@@ -257,7 +234,6 @@
       title.textContent = m.title;
       card.appendChild(title);
 
-      // view btn
       const view = document.createElement('a');
       view.href = img.src;
       view.target = '_blank';
@@ -266,7 +242,6 @@
       view.textContent = 'View';
       card.appendChild(view);
 
-      // download btn
       const dl = document.createElement('a');
       dl.href = img.src;
       dl.download = '';
