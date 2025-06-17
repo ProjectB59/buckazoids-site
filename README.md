@@ -1,0 +1,1 @@
+This is the official GitHub repository for the Buckazoids Project media and transparency site, maintained by Project B59. This site serves as the public-facing hub for press assets, meme culture, video materials, and financial data related to the Buckazoids ecosystem.
