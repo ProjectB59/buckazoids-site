@@ -14,10 +14,16 @@
       color: #fff3e2;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
       text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     img.logo {
@@ -81,11 +87,24 @@
       box-shadow: 0 0 15px #feb73f, 0 0 30px #feb73f;
     }
 
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 1rem 1rem 1rem;
+      background-color: #0a0c13;
+      color: #ccc;
+      font-size: 0.95em;
+      line-height: 1.6;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    footer a {
+      color: #fff3e2;
+      text-decoration: underline;
+    }
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
       }
-
       .buttons a {
         font-size: 0.9rem;
         padding: 0.6rem 1.2rem;
@@ -94,33 +113,28 @@
   </style>
 </head>
 <body>
-
-
-
-  <p class="tagline">A Project B59 Research Initiative</p>
-
-  <!-- Main Heading -->
-  <h1>Buckazoids</h1>
-  <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
-
-  <!-- Buttons -->
-  <div class="buttons">
-    <a href="press-kit.html">Media Kit</a>
-    <a href="financials.html">Financials</a>
-    <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
-  </div>
+  <main>
+    <p class="tagline">A Project B59 Research Initiative</p>
+    <!-- Main Heading -->
+    <h1>Buckazoids</h1>
+    <p class="subtitle">Before Bitcoin, There Were Buckazoids.<br />Lost digital currency. Now community-owned.</p>
+    <!-- Buttons -->
+    <div class="buttons">
+      <a href="press-kit.html">Media Kit</a>
+      <a href="financials.html">Financials</a>
+      <a href="https://buckazoids-bitcoin-echo.lovable.app/about" target="_blank">Lore</a>
+    </div>
+  </main>
   <!-- Footer -->
-  <footer style="margin-top: 4rem; padding: 2rem 1rem 1rem 1rem; background-color: #0a0c13; color: #ccc; font-size: 0.9em; line-height: 1.6; width: 100%;">
+  <footer>
     <p><strong>Disclaimer:</strong> Project B59 is not affiliated with, endorsed by, or in any way connected to Sierra On-Line, Universe, or any other gaming entities. All trademarks, logos, and intellectual property related to those companies remain the property of their respective owners. Our research is independently conducted and is not sponsored by any gaming company.</p>
     <p>Buckazoids (the coin) is a memecoin created by third parties for entertainment and community purposes only. Project B59 does not issue, control, or promote the coin. It is not a financial instrument, security, or investment product, has no intrinsic value, is not backed by any assets, and should not be considered a means of financial gain or a substitute for fiat currency. Participation is entirely at your own risk. We make no representations or warranties regarding its value, stability, or performance. Always conduct your own research and consult a qualified financial advisor before engaging with any cryptocurrency or digital asset.</p>
     <p style="margin-top: 1rem;">© 2025 Project B59. All rights reserved.</p>
     <div style="margin-top: 0.7em; font-size: 1em;">
-      <a href="privacy.html" style="color: #fff3e2; text-decoration: underline;">Privacy Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
       &nbsp;|&nbsp;
-      <a href="contact.html" style="color: #fff3e2; text-decoration: underline;">Contact &amp; Your Rights</a>
+      <a href="contact.html">Contact &amp; Your Rights</a>
     </div>
   </footer>
-</body>
-</html>
 </body>
 </html>
