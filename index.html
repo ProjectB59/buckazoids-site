@@ -9,7 +9,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: url('img/Screenshot-2025-07-05-191338.jpg') no-repeat center center fixed;
+    background: url('img/buckwritten.png') no-repeat center top fixed;
       background-size: cover;
       background-color: #0d1113;
       font-family: 'Sora', sans-serif;
@@ -25,7 +25,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* Move content to the top */
+      padding-top: 2rem; /* Add some padding at the top */
       position: relative;
       z-index: 1;
     }
@@ -48,7 +49,7 @@
     .tagline {
       font-size: 0.9rem;
       color: #aaa;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     h1 {
@@ -97,6 +98,22 @@
       font-size: 1.05rem;
       margin-bottom: 0.5rem;
       display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #feb73f, 0 0 30px #feb73f;
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #f77f00, 0 0 20px #f77f00;
+      }
     }
 
     .buttons a:hover,
@@ -113,6 +130,7 @@
       letter-spacing: 0.01em;
       border: none;
       cursor: pointer;
+      animation: pulse 1.5s infinite;
     }
 
     footer {
@@ -151,7 +169,6 @@
     <!-- Buttons -->
     <div class="buttons">
       <a href="press-kit.html">Media Kit</a>
-      <a href="financials.html">Financials</a>
       <a href="https://buckazoids.world" target="_blank">Lore</a>
       <a href="https://factual-cinema-e47.notion.site/1e0b7bec064980dbbd9de3c43e474c95?v=220b7bec0649805787ee000c8cb0c9ad" target="_blank">Newsletter</a>
     </div>
